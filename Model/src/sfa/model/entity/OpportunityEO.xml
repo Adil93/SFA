@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OpportunityEO"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="OPPORTUNITY"
+  AliasName="OpportunityEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="OpportunityId"
+    IsNotNull="true"
+    Precision="20"
+    Scale="0"
+    ColumnName="OPPORTUNITY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="OPPORTUNITY"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="CloseDate"
+    ColumnName="CLOSE_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="OPPORTUNITY"/>
+  <Attribute
+    Name="PrimaryContactId"
+    Precision="20"
+    Scale="0"
+    ColumnName="PRIMARY_CONTACT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="OPPORTUNITY"/>
+  <Attribute
+    Name="SalesStage"
+    Precision="30"
+    ColumnName="SALES_STAGE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OPPORTUNITY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SalesMethod"
+    Precision="30"
+    ColumnName="SALES_METHOD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OPPORTUNITY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SalesChannel"
+    Precision="30"
+    ColumnName="SALES_CHANNEL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OPPORTUNITY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Revenue"
+    Precision="20"
+    Scale="0"
+    ColumnName="REVENUE"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="OPPORTUNITY"/>
+  <Attribute
+    Name="BestCaseRevenue"
+    Precision="20"
+    Scale="0"
+    ColumnName="BEST_CASE_REVENUE"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="OPPORTUNITY"/>
+  <Attribute
+    Name="WorstCaseRevenue"
+    Precision="20"
+    Scale="0"
+    ColumnName="WORST_CASE_REVENUE"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="OPPORTUNITY"/>
+  <Attribute
+    Name="IsBudgeted"
+    Precision="10"
+    ColumnName="IS_BUDGETED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OPPORTUNITY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BudgetAmountIfAvail"
+    Precision="20"
+    Scale="0"
+    ColumnName="BUDGET_AMOUNT_IF_AVAIL"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="OPPORTUNITY"/>
+  <Attribute
+    Name="EstimatedDurationDays"
+    Precision="10"
+    Scale="0"
+    ColumnName="ESTIMATED_DURATION_DAYS"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="OPPORTUNITY"/>
+  <Attribute
+    Name="RiskLevel"
+    Precision="30"
+    ColumnName="RISK_LEVEL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OPPORTUNITY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    ColumnName="CREATION_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="OPPORTUNITY"/>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="OPPORTUNITY"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    Scale="0"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="OPPORTUNITY"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    Scale="0"
+    ColumnName="MODIFIED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="OPPORTUNITY"/>
+  <Attribute
+    Name="Description"
+    Precision="500"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OPPORTUNITY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Interaction"
+    Association="sfa.model.entity.SysC007420Assoc"
+    AssociationEnd="sfa.model.entity.SysC007420Assoc.Interaction"
+    AssociationOtherEnd="sfa.model.entity.SysC007420Assoc.Opportunity"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CustomerAccount"
+    Association="sfa.model.entity.FkCustomerAccountOppoidAssoc"
+    AssociationEnd="sfa.model.entity.FkCustomerAccountOppoidAssoc.CustomerAccount"
+    AssociationOtherEnd="sfa.model.entity.FkCustomerAccountOppoidAssoc.Opportunity"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Appointment"
+    Association="sfa.model.entity.FkAppointmentOpportunityAssoc"
+    AssociationEnd="sfa.model.entity.FkAppointmentOpportunityAssoc.Appointment"
+    AssociationOtherEnd="sfa.model.entity.FkAppointmentOpportunityAssoc.Opportunity"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="CustomerContact"
+    Association="sfa.model.entity.FkOpportunityPrimarycontactAssoc"
+    AssociationEnd="sfa.model.entity.FkOpportunityPrimarycontactAssoc.CustomerContact"
+    AssociationOtherEnd="sfa.model.entity.FkOpportunityPrimarycontactAssoc.Opportunity"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Revenueitem"
+    Association="sfa.model.entity.SysC007432Assoc"
+    AssociationEnd="sfa.model.entity.SysC007432Assoc.Revenueitem"
+    AssociationOtherEnd="sfa.model.entity.SysC007432Assoc.Opportunity"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Users"
+    Association="sfa.model.entity.SysC007415Assoc"
+    AssociationEnd="sfa.model.entity.SysC007415Assoc.Users"
+    AssociationOtherEnd="sfa.model.entity.SysC007415Assoc.Opportunity"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Users1"
+    Association="sfa.model.entity.SysC007414Assoc"
+    AssociationEnd="sfa.model.entity.SysC007414Assoc.Users1"
+    AssociationOtherEnd="sfa.model.entity.SysC007414Assoc.Opportunity1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SysC007416"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007416"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.OpportunityEO.OpportunityId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkOpportunityPrimarycontact">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007425"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_OPPORTUNITY_PRIMARYCONTACT"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.OpportunityEO.PrimaryContactId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007414">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007356"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SYS_C007414"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.OpportunityEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007415">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007356"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SYS_C007415"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.OpportunityEO.ModifiedBy"/>
+    </AttrArray>
+  </Key>
+</Entity>

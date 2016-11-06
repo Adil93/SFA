@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustomerAccountEO"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="CUSTOMER_ACCOUNT"
+  AliasName="CustomerAccountEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="AccountId"
+    IsNotNull="true"
+    Precision="20"
+    Scale="0"
+    ColumnName="ACCOUNT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNT"
+    PrimaryKey="true">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="CustomerAccountEORow"/>
+  </Attribute>
+  <Attribute
+    Name="AccountName"
+    Precision="50"
+    ColumnName="ACCOUNT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUSTOMER_ACCOUNT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AddressId"
+    Precision="20"
+    Scale="0"
+    ColumnName="ADDRESS_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNT"/>
+  <Attribute
+    Name="AccountUrl"
+    Precision="100"
+    ColumnName="ACCOUNT_URL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUSTOMER_ACCOUNT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ParentAccountId"
+    Precision="20"
+    Scale="0"
+    ColumnName="PARENT_ACCOUNT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNT"/>
+  <Attribute
+    Name="Ceo"
+    Precision="100"
+    ColumnName="CEO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUSTOMER_ACCOUNT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="NoOfEmployees"
+    Precision="10"
+    Scale="0"
+    ColumnName="NO_OF_EMPLOYEES"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNT"/>
+  <Attribute
+    Name="Email"
+    Precision="100"
+    ColumnName="EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUSTOMER_ACCOUNT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Phone"
+    Precision="30"
+    ColumnName="PHONE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUSTOMER_ACCOUNT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PrimaryContactId"
+    Precision="20"
+    Scale="0"
+    ColumnName="PRIMARY_CONTACT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNT"/>
+  <Attribute
+    Name="RelatedOpportunityId"
+    Precision="20"
+    Scale="0"
+    ColumnName="RELATED_OPPORTUNITY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNT"/>
+  <Attribute
+    Name="CreationDate"
+    ColumnName="CREATION_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="CUSTOMER_ACCOUNT"/>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="CUSTOMER_ACCOUNT"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    Scale="0"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNT"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    Scale="0"
+    ColumnName="MODIFIED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="CUSTOMER_ACCOUNT"/>
+  <Attribute
+    Name="Description"
+    Precision="2000"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CUSTOMER_ACCOUNT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2000"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Address"
+    Association="sfa.model.entity.FkCustomerAccountAddressidAssoc"
+    AssociationEnd="sfa.model.entity.FkCustomerAccountAddressidAssoc.Address"
+    AssociationOtherEnd="sfa.model.entity.FkCustomerAccountAddressidAssoc.CustomerAccount"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="CustomerContact"
+    Association="sfa.model.entity.FkCustomerAccountPrimaryAssoc"
+    AssociationEnd="sfa.model.entity.FkCustomerAccountPrimaryAssoc.CustomerContact"
+    AssociationOtherEnd="sfa.model.entity.FkCustomerAccountPrimaryAssoc.CustomerAccount"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="CustomerContact1"
+    Association="sfa.model.entity.FkCustomerContactAccoundIdAssoc"
+    AssociationEnd="sfa.model.entity.FkCustomerContactAccoundIdAssoc.CustomerContact1"
+    AssociationOtherEnd="sfa.model.entity.FkCustomerContactAccoundIdAssoc.CustomerAccount1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Opportunity"
+    Association="sfa.model.entity.FkCustomerAccountOppoidAssoc"
+    AssociationEnd="sfa.model.entity.FkCustomerAccountOppoidAssoc.Opportunity"
+    AssociationOtherEnd="sfa.model.entity.FkCustomerAccountOppoidAssoc.CustomerAccount"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Users"
+    Association="sfa.model.entity.FkCustomerAccountModifiedbyAssoc"
+    AssociationEnd="sfa.model.entity.FkCustomerAccountModifiedbyAssoc.Users"
+    AssociationOtherEnd="sfa.model.entity.FkCustomerAccountModifiedbyAssoc.CustomerAccount"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Users1"
+    Association="sfa.model.entity.FkCustomerAccountCreatedbyAssoc"
+    AssociationEnd="sfa.model.entity.FkCustomerAccountCreatedbyAssoc.Users1"
+    AssociationOtherEnd="sfa.model.entity.FkCustomerAccountCreatedbyAssoc.CustomerAccount1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SysC007426"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007426"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.CustomerAccountEO.AccountId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkCustomerAccountAddressid">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007345"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_CUSTOMER_ACCOUNT_ADDRESSID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.CustomerAccountEO.AddressId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkCustomerAccountCreatedby">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007356"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_CUSTOMER_ACCOUNT_CREATEDBY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.CustomerAccountEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkCustomerAccountModifiedby">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007356"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_CUSTOMER_ACCOUNT_MODIFIEDBY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.CustomerAccountEO.ModifiedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkCustomerAccountOppoid">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007416"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_CUSTOMER_ACCOUNT_OPPOID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.CustomerAccountEO.RelatedOpportunityId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkCustomerAccountPrimary">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007425"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_CUSTOMER_ACCOUNT_PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.CustomerAccountEO.PrimaryContactId"/>
+    </AttrArray>
+  </Key>
+</Entity>

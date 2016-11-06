@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkUserCreatedByLink"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  EntityAssociation="sfa.model.entity.FkUserCreatedByAssoc">
+  <ViewLinkDefEnd
+    Name="CreatedByUsers"
+    Cardinality="1"
+    Source="true"
+    Owner="sfa.model.uiview.UsersVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="CreatedByUsers"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.uiview.UsersVO.UserId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Users"
+    Cardinality="-1"
+    Owner="sfa.model.uiview.UsersVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Users"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.uiview.UsersVO.CreatedBy"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

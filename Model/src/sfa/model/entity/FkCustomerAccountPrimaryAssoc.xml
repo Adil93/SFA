@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkCustomerAccountPrimaryAssoc"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="CustomerContact"
+    Cardinality="1"
+    Source="true"
+    Owner="sfa.model.entity.CustomerContactEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="CustomerContact"/>
+      <Attr Name="_foreignKey" Value="sfa.model.entity.CustomerContactEO.SysC007425"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.CustomerContactEO.ContactId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="CustomerAccount"
+    Cardinality="-1"
+    Owner="sfa.model.entity.CustomerAccountEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="CustomerAccount"/>
+      <Attr Name="_foreignKey" Value="sfa.model.entity.CustomerAccountEO.FkCustomerAccountPrimary"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.CustomerAccountEO.PrimaryContactId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

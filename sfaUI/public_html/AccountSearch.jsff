@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelSplitter id="ps1" orientation="vertical">
+    <f:facet name="first">
+      <af:panelGroupLayout layout="vertical" id="pgl1">
+        <af:panelHeader text="CustomerAccountEO" id="ph1">
+          <af:query id="qryId1" headerText="Search" disclosed="true"
+                    value="#{bindings.CustomerAccountSearchCriteriaQuery.queryDescriptor}"
+                    model="#{bindings.CustomerAccountSearchCriteriaQuery.queryModel}"
+                    queryListener="#{bindings.CustomerAccountSearchCriteriaQuery.processQuery}"
+                    queryOperationListener="#{bindings.CustomerAccountSearchCriteriaQuery.processQueryOperation}"/>
+        </af:panelHeader>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="second">
+      <af:table value="#{bindings.CustomerAccount11.collectionModel}" var="row"
+                rows="#{bindings.CustomerAccount11.rangeSize}"
+                emptyText="#{bindings.CustomerAccount11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                rowBandingInterval="0" selectedRowKeys="#{bindings.CustomerAccount11.collectionModel.selectedRow}"
+                selectionListener="#{bindings.CustomerAccount11.collectionModel.makeCurrent}" rowSelection="single"
+                fetchSize="#{bindings.CustomerAccount11.rangeSize}"
+                filterModel="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}" filterVisible="true"
+                queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}" varStatus="vs" id="t1">
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.AccountId.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.CustomerAccount11.hints.AccountId.label}" id="c1">
+          <af:outputText value="#{row.AccountId}" shortDesc="#{bindings.CustomerAccount11.hints.AccountId.tooltip}"
+                         id="ot1">
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.CustomerAccount11.hints.AccountId.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.AccountName.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.CustomerAccount11.hints.AccountName.label}" id="c2">
+          <af:outputText value="#{row.AccountName}" shortDesc="#{bindings.CustomerAccount11.hints.AccountName.tooltip}"
+                         id="ot2"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.AddressId.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.CustomerAccount11.hints.AddressId.label}" id="c3">
+          <af:outputText value="#{row.AddressId}" shortDesc="#{bindings.CustomerAccount11.hints.AddressId.tooltip}"
+                         id="ot3">
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.CustomerAccount11.hints.AddressId.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.AccountUrl.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.CustomerAccount11.hints.AccountUrl.label}" id="c4">
+          <af:outputText value="#{row.AccountUrl}" shortDesc="#{bindings.CustomerAccount11.hints.AccountUrl.tooltip}"
+                         id="ot4"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.ParentAccountId.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.CustomerAccount11.hints.ParentAccountId.label}" id="c5">
+          <af:outputText value="#{row.ParentAccountId}"
+                         shortDesc="#{bindings.CustomerAccount11.hints.ParentAccountId.tooltip}" id="ot5">
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.CustomerAccount11.hints.ParentAccountId.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.Ceo.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.CustomerAccount11.hints.Ceo.label}" id="c6">
+          <af:outputText value="#{row.Ceo}" shortDesc="#{bindings.CustomerAccount11.hints.Ceo.tooltip}" id="ot6"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.NoOfEmployees.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.CustomerAccount11.hints.NoOfEmployees.label}" id="c7">
+          <af:outputText value="#{row.NoOfEmployees}"
+                         shortDesc="#{bindings.CustomerAccount11.hints.NoOfEmployees.tooltip}" id="ot7">
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.CustomerAccount11.hints.NoOfEmployees.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.Email.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.CustomerAccount11.hints.Email.label}" id="c8">
+          <af:outputText value="#{row.Email}" shortDesc="#{bindings.CustomerAccount11.hints.Email.tooltip}" id="ot8"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.Phone.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.CustomerAccount11.hints.Phone.label}" id="c9">
+          <af:outputText value="#{row.Phone}" shortDesc="#{bindings.CustomerAccount11.hints.Phone.tooltip}" id="ot9"/>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.PrimaryContactId.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.CustomerAccount11.hints.PrimaryContactId.label}" id="c10">
+          <af:outputText value="#{row.PrimaryContactId}"
+                         shortDesc="#{bindings.CustomerAccount11.hints.PrimaryContactId.tooltip}" id="ot10">
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.CustomerAccount11.hints.PrimaryContactId.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.RelatedOpportunityId.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.CustomerAccount11.hints.RelatedOpportunityId.label}" id="c11">
+          <af:outputText value="#{row.RelatedOpportunityId}"
+                         shortDesc="#{bindings.CustomerAccount11.hints.RelatedOpportunityId.tooltip}" id="ot11">
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.CustomerAccount11.hints.RelatedOpportunityId.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.CreationDate.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.CustomerAccount11.hints.CreationDate.label}" id="c12">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.CreationDate.value}"
+                          id="id1">
+              <af:convertDateTime pattern="#{bindings.CustomerAccount11.hints.CreationDate.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:outputText value="#{row.CreationDate}"
+                         shortDesc="#{bindings.CustomerAccount11.hints.CreationDate.tooltip}" id="ot12">
+            <af:convertDateTime pattern="#{bindings.CustomerAccount11.hints.CreationDate.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.ModifiedDate.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.CustomerAccount11.hints.ModifiedDate.label}" id="c13">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.ModifiedDate.value}"
+                          id="id2">
+              <af:convertDateTime pattern="#{bindings.CustomerAccount11.hints.ModifiedDate.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:outputText value="#{row.ModifiedDate}"
+                         shortDesc="#{bindings.CustomerAccount11.hints.ModifiedDate.tooltip}" id="ot13">
+            <af:convertDateTime pattern="#{bindings.CustomerAccount11.hints.ModifiedDate.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.CreatedBy.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.CustomerAccount11.hints.CreatedBy.label}" id="c14">
+          <af:outputText value="#{row.CreatedBy}" shortDesc="#{bindings.CustomerAccount11.hints.CreatedBy.tooltip}"
+                         id="ot14">
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.CustomerAccount11.hints.CreatedBy.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.ModifiedBy.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.CustomerAccount11.hints.ModifiedBy.label}" id="c15">
+          <af:outputText value="#{row.ModifiedBy}" shortDesc="#{bindings.CustomerAccount11.hints.ModifiedBy.tooltip}"
+                         id="ot15">
+            <af:convertNumber groupingUsed="false" pattern="#{bindings.CustomerAccount11.hints.ModifiedBy.format}"/>
+          </af:outputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.CustomerAccount11.hints.Description.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.CustomerAccount11.hints.Description.label}" id="c16">
+          <af:outputText value="#{row.Description}" shortDesc="#{bindings.CustomerAccount11.hints.Description.tooltip}"
+                         id="ot16"/>
+        </af:column>
+      </af:table>
+    </f:facet>
+  </af:panelSplitter>
+</jsp:root>

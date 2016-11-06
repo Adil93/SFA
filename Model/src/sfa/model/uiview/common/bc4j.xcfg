@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="sfa.model.uiview.AppModuleAM">
+    <AppModuleConfig name="AppModuleAMLocal" jbo.project="sfa.model.Model"
+                     ApplicationName="sfa.model.uiview.AppModuleAM" DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/sfaDBDS"/>
+      <Security AppModuleJndiName="sfa.model.uiview.AppModuleAM"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="AppModuleAMShared" jbo.project="sfa.model.Model"
+                     ApplicationName="sfa.model.uiview.AppModuleAM" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/sfaDBDS"/>
+      <Security AppModuleJndiName="sfa.model.uiview.AppModuleAM"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

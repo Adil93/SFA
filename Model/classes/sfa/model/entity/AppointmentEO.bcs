@@ -1,0 +1,12 @@
+//Groovy Scripts for sfa.model.entity.AppointmentEO
+
+package sfa.model.entity
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="AppointmentId")
+def AppointmentId_ExpressionScript_Expression()
+{
+(new oracle.jbo.server.SequenceImpl("APPOINTMENT_SEQ",adf.object.getDBTransaction())).getSequenceNumber()
+}
+

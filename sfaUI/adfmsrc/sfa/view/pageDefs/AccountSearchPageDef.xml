@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="AccountSearchPageDef"
+                Package="sfa.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CustomerAccount1" RangeSize="25" DataControl="AppModuleAMDataControl"
+              id="CustomerAccount1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CustomerAccount1Iterator" id="ImplicitViewCriteriaQuery"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CustomerAccount1Iterator" id="ImplicitViewCriteriaQuery1"/>
+    <searchRegion Criteria="CustomerAccountSearchCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" Binds="CustomerAccount1Iterator"
+                  id="CustomerAccountSearchCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CustomerAccount1Iterator" id="CustomerAccount1">
+      <nodeDefinition DefName="sfa.model.uiview.CustomerAccountVO" Name="CustomerAccount10">
+        <AttrNames>
+          <Item Value="AccountName"/>
+          <Item Value="AddressId"/>
+          <Item Value="AccountUrl"/>
+          <Item Value="ParentAccountId"/>
+          <Item Value="Ceo"/>
+          <Item Value="NoOfEmployees"/>
+          <Item Value="Email"/>
+          <Item Value="Phone"/>
+          <Item Value="PrimaryContactId"/>
+          <Item Value="RelatedOpportunityId"/>
+          <Item Value="CreationDate"/>
+          <Item Value="ModifiedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="ModifiedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="CustomerAccount1Iterator" id="CustomerAccount11">
+      <nodeDefinition DefName="sfa.model.uiview.CustomerAccountVO" Name="CustomerAccount110">
+        <AttrNames>
+          <Item Value="AccountId"/>
+          <Item Value="AccountName"/>
+          <Item Value="AddressId"/>
+          <Item Value="AccountUrl"/>
+          <Item Value="ParentAccountId"/>
+          <Item Value="Ceo"/>
+          <Item Value="NoOfEmployees"/>
+          <Item Value="Email"/>
+          <Item Value="Phone"/>
+          <Item Value="PrimaryContactId"/>
+          <Item Value="RelatedOpportunityId"/>
+          <Item Value="CreationDate"/>
+          <Item Value="ModifiedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

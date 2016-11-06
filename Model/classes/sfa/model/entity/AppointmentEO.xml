@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppointmentEO"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="APPOINTMENT"
+  AliasName="AppointmentEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="AppointmentId"
+    IsNotNull="true"
+    Precision="20"
+    Scale="0"
+    ColumnName="APPOINTMENT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="APPOINTMENT"
+    PrimaryKey="true">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="AppointmentEORow"/>
+  </Attribute>
+  <Attribute
+    Name="Name"
+    IsNotNull="true"
+    Precision="100"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="APPOINTMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AppointmentType"
+    Precision="20"
+    Scale="0"
+    ColumnName="APPOINTMENT_TYPE"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="StartTime"
+    ColumnName="START_TIME"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="EndTime"
+    ColumnName="END_TIME"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="Location"
+    Precision="50"
+    ColumnName="LOCATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="APPOINTMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RelatedOpportunityId"
+    Precision="20"
+    Scale="0"
+    ColumnName="RELATED_OPPORTUNITY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="ParentId"
+    Precision="20"
+    Scale="0"
+    ColumnName="PARENT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="ParentType"
+    Precision="30"
+    Scale="0"
+    ColumnName="PARENT_TYPE"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="CreationDate"
+    ColumnName="CREATION_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    Scale="0"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    Scale="0"
+    ColumnName="MODIFIED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="APPOINTMENT"/>
+  <Attribute
+    Name="Description"
+    Precision="2000"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="APPOINTMENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2000"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="AppointmentInviteeRelation"
+    Association="sfa.model.entity.SysC007412Assoc"
+    AssociationEnd="sfa.model.entity.SysC007412Assoc.AppointmentInviteeRelation"
+    AssociationOtherEnd="sfa.model.entity.SysC007412Assoc.Appointment"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Opportunity"
+    Association="sfa.model.entity.FkAppointmentOpportunityAssoc"
+    AssociationEnd="sfa.model.entity.FkAppointmentOpportunityAssoc.Opportunity"
+    AssociationOtherEnd="sfa.model.entity.FkAppointmentOpportunityAssoc.Appointment"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Users"
+    Association="sfa.model.entity.FkAppointmentModifiedbyAssoc"
+    AssociationEnd="sfa.model.entity.FkAppointmentModifiedbyAssoc.Users"
+    AssociationOtherEnd="sfa.model.entity.FkAppointmentModifiedbyAssoc.Appointment"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Users1"
+    Association="sfa.model.entity.FkAppointmentCreatedbyAssoc"
+    AssociationEnd="sfa.model.entity.FkAppointmentCreatedbyAssoc.Users1"
+    AssociationOtherEnd="sfa.model.entity.FkAppointmentCreatedbyAssoc.Appointment1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SysC007409"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007409"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.AppointmentEO.AppointmentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkAppointmentCreatedby">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007356"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_APPOINTMENT_CREATEDBY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.AppointmentEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkAppointmentModifiedby">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007356"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_APPOINTMENT_MODIFIEDBY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.AppointmentEO.ModifiedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkAppointmentOpportunity">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007416"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_APPOINTMENT_OPPORTUNITY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.AppointmentEO.RelatedOpportunityId"/>
+    </AttrArray>
+  </Key>
+</Entity>

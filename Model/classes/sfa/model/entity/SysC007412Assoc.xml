@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SysC007412Assoc"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Appointment"
+    Cardinality="1"
+    Source="true"
+    Owner="sfa.model.entity.AppointmentEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Appointment"/>
+      <Attr Name="_foreignKey" Value="sfa.model.entity.AppointmentEO.SysC007409"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.AppointmentEO.AppointmentId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="AppointmentInviteeRelation"
+    Cardinality="-1"
+    Owner="sfa.model.entity.AppointmentInviteeRelationEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="AppointmentInviteeRelation"/>
+      <Attr Name="_foreignKey" Value="sfa.model.entity.AppointmentInviteeRelationEO.SysC007412"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.AppointmentInviteeRelationEO.AppointmentId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkInteractionModifiedbyLink"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  EntityAssociation="sfa.model.entity.FkInteractionModifiedbyAssoc">
+  <ViewLinkDefEnd
+    Name="Users"
+    Cardinality="1"
+    Source="true"
+    Owner="sfa.model.uiview.UsersVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Users"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.uiview.UsersVO.UserId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Interaction"
+    Cardinality="-1"
+    Owner="sfa.model.uiview.InteractionVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Interaction"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.uiview.InteractionVO.ModifiedBy"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

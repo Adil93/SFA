@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="InteractionEO"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="INTERACTION"
+  AliasName="InteractionEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="InteractionId"
+    IsNotNull="true"
+    Precision="20"
+    Scale="0"
+    ColumnName="INTERACTION_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="INTERACTION"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Type"
+    Precision="30"
+    ColumnName="TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INTERACTION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Direction"
+    Precision="10"
+    ColumnName="DIRECTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INTERACTION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StartTime"
+    ColumnName="START_TIME"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="INTERACTION"/>
+  <Attribute
+    Name="EndTime"
+    ColumnName="END_TIME"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="INTERACTION"/>
+  <Attribute
+    Name="Resolution"
+    Precision="40"
+    ColumnName="RESOLUTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INTERACTION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RelatedOpportunityId"
+    Precision="20"
+    Scale="0"
+    ColumnName="RELATED_OPPORTUNITY_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="INTERACTION"/>
+  <Attribute
+    Name="ParentId"
+    IsNotNull="true"
+    Precision="20"
+    Scale="0"
+    ColumnName="PARENT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="INTERACTION"/>
+  <Attribute
+    Name="ParentType"
+    IsNotNull="true"
+    Precision="30"
+    Scale="0"
+    ColumnName="PARENT_TYPE"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="INTERACTION"/>
+  <Attribute
+    Name="CreationDate"
+    ColumnName="CREATION_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="INTERACTION"/>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="INTERACTION"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    Scale="0"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="INTERACTION"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    Scale="0"
+    ColumnName="MODIFIED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="INTERACTION"/>
+  <Attribute
+    Name="Description"
+    Precision="500"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="INTERACTION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Opportunity"
+    Association="sfa.model.entity.SysC007420Assoc"
+    AssociationEnd="sfa.model.entity.SysC007420Assoc.Opportunity"
+    AssociationOtherEnd="sfa.model.entity.SysC007420Assoc.Interaction"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Users"
+    Association="sfa.model.entity.FkInteractionModifiedbyAssoc"
+    AssociationEnd="sfa.model.entity.FkInteractionModifiedbyAssoc.Users"
+    AssociationOtherEnd="sfa.model.entity.FkInteractionModifiedbyAssoc.Interaction"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Users1"
+    Association="sfa.model.entity.FkInteractionCreatedbyAssoc"
+    AssociationEnd="sfa.model.entity.FkInteractionCreatedbyAssoc.Users1"
+    AssociationOtherEnd="sfa.model.entity.FkInteractionCreatedbyAssoc.Interaction1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SysC007427"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007427"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.InteractionEO.InteractionId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkInteractionCreatedby">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007356"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INTERACTION_CREATEDBY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.InteractionEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkInteractionModifiedby">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007356"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_INTERACTION_MODIFIEDBY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.InteractionEO.ModifiedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007420">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007416"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SYS_C007420"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.InteractionEO.RelatedOpportunityId"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DocumentsEO"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DOCUMENTS"
+  AliasName="DocumentsEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="DocumentId"
+    IsNotNull="true"
+    Precision="20"
+    Scale="0"
+    ColumnName="DOCUMENT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="DOCUMENTS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Type"
+    Precision="50"
+    ColumnName="TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Content"
+    IsQueriable="false"
+    ColumnName="CONTENT"
+    SQLType="BLOB"
+    Type="oracle.jbo.domain.BlobDomain"
+    ColumnType="BLOB"
+    TableName="DOCUMENTS"/>
+  <Attribute
+    Name="ParentId"
+    Precision="20"
+    Scale="0"
+    ColumnName="PARENT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="DOCUMENTS"/>
+  <Attribute
+    Name="ParentType"
+    Precision="100"
+    ColumnName="PARENT_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    ColumnName="CREATION_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="DOCUMENTS"/>
+  <Attribute
+    Name="ModifiedDate"
+    ColumnName="MODIFIED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="DOCUMENTS"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="20"
+    Scale="0"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="DOCUMENTS"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="20"
+    Scale="0"
+    ColumnName="MODIFIED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigInteger"
+    ColumnType="NUMBER"
+    TableName="DOCUMENTS"/>
+  <Attribute
+    Name="Description"
+    Precision="500"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCUMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Users"
+    Association="sfa.model.entity.SysC007441Assoc"
+    AssociationEnd="sfa.model.entity.SysC007441Assoc.Users"
+    AssociationOtherEnd="sfa.model.entity.SysC007441Assoc.Documents"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Users1"
+    Association="sfa.model.entity.SysC007440Assoc"
+    AssociationEnd="sfa.model.entity.SysC007440Assoc.Users1"
+    AssociationOtherEnd="sfa.model.entity.SysC007440Assoc.Documents1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SysC007439"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C007439"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.DocumentsEO.DocumentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007440">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007356"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SYS_C007440"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.DocumentsEO.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC007441">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C007356"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SYS_C007441"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.DocumentsEO.ModifiedBy"/>
+    </AttrArray>
+  </Key>
+</Entity>

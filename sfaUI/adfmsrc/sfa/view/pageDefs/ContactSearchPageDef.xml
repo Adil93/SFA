@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="ContactSearchPageDef"
+                Package="sfa.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CustomerContact1" RangeSize="25" DataControl="AppModuleAMDataControl"
+              id="CustomerContact1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CustomerContact1Iterator" id="ImplicitViewCriteriaQuery"/>
+    <searchRegion Criteria="CustomerSearchCreteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CustomerContact1Iterator" id="CustomerSearchCreteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CustomerContact1Iterator" id="CustomerContact1">
+      <nodeDefinition DefName="sfa.model.uiview.CustomerContactVO" Name="CustomerContact10">
+        <AttrNames>
+          <Item Value="FirstName"/>
+          <Item Value="MiddleName"/>
+          <Item Value="Title"/>
+          <Item Value="LastName"/>
+          <Item Value="AddressId"/>
+          <Item Value="AccountId"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="WorkPhone"/>
+          <Item Value="MobilePhone"/>
+          <Item Value="Email"/>
+          <Item Value="InfluenceLevel"/>
+          <Item Value="IsPrimaryContact"/>
+          <Item Value="CreationDate"/>
+          <Item Value="ModifiedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="CustomerContact1Iterator" id="CustomerContact11">
+      <nodeDefinition DefName="sfa.model.uiview.CustomerContactVO" Name="CustomerContact110">
+        <AttrNames>
+          <Item Value="FirstName"/>
+          <Item Value="MiddleName"/>
+          <Item Value="Title"/>
+          <Item Value="LastName"/>
+          <Item Value="AddressId"/>
+          <Item Value="AccountId"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="WorkPhone"/>
+          <Item Value="MobilePhone"/>
+          <Item Value="Email"/>
+          <Item Value="InfluenceLevel"/>
+          <Item Value="IsPrimaryContact"/>
+          <Item Value="CreationDate"/>
+          <Item Value="ModifiedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

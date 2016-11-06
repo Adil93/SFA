@@ -1,0 +1,12 @@
+//Groovy Scripts for sfa.model.entity.CustomerContactEO
+
+package sfa.model.entity
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="ContactId")
+def ContactId_ExpressionScript_Expression()
+{
+(new oracle.jbo.server.SequenceImpl("CUSTOMER_CONTACT_SEQ",adf.object.getDBTransaction())).getSequenceNumber()
+}
+

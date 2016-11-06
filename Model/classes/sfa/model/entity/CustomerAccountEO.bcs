@@ -1,0 +1,12 @@
+//Groovy Scripts for sfa.model.entity.CustomerAccountEO
+
+package sfa.model.entity
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="AccountId")
+def AccountId_ExpressionScript_Expression()
+{
+(new oracle.jbo.server.SequenceImpl("CUSTOMER_ACCOUNT_SEQ",adf.object.getDBTransaction())).getSequenceNumber()
+}
+
