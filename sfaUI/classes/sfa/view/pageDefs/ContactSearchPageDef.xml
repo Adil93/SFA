@@ -33,6 +33,9 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="CustomerContact1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="CustomerContact1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <tree IterBinding="CustomerContact1Iterator" id="CustomerContact11">
       <nodeDefinition DefName="sfa.model.uiview.CustomerContactVO" Name="CustomerContact110">
         <AttrNames>
@@ -43,12 +46,10 @@
           <Item Value="AccountId"/>
           <Item Value="MobilePhone"/>
           <Item Value="Email"/>
+          <Item Value="IsPrimaryContact"/>
           <Item Value="Description"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="CustomerContact1Iterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="CustomerContact1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

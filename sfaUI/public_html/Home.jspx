@@ -10,14 +10,15 @@
                         <af:outputText value="@Copyright Reserved" id="ot1"/>
                     </f:facet>
                     <f:facet name="navigation">
-                        <af:panelList id="pl1">
+                        <af:panelList id="pl1" inlineStyle="padding:5px 0px 0px; margin:5px 0px 0px 0px;">
                             <af:link text="Contacts" id="l1" partialSubmit="true" partialTriggers="l1"
                                      inlineStyle="font-size:large;">
                                 <af:setPropertyListener from="contact"
                                                         to="#{viewScope.DynamicRegionBean.currentTF}"
                                                         type="action"/>
                             </af:link>
-                            <af:link text="Account" id="l2" partialSubmit="true" partialTriggers="l2">
+                            <af:link text="Account" id="l2" partialSubmit="true" partialTriggers="l2"
+                                     inlineStyle="font-size:large;">
                                 <af:setPropertyListener from="account"
                                                         to="#{viewScope.DynamicRegionBean.currentTF}"
                                                         type="action"/>
