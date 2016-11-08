@@ -6,8 +6,6 @@
     <variableIterator id="variables"/>
     <iterator Binds="CustomerContact1" RangeSize="25" DataControl="AppModuleAMDataControl"
               id="CustomerContact1Iterator"/>
-    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  Binds="CustomerContact1Iterator" id="ImplicitViewCriteriaQuery"/>
     <searchRegion Criteria="CustomerSearchCreteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="CustomerContact1Iterator" id="CustomerSearchCreteriaQuery"/>
   </executables>
@@ -38,25 +36,19 @@
     <tree IterBinding="CustomerContact1Iterator" id="CustomerContact11">
       <nodeDefinition DefName="sfa.model.uiview.CustomerContactVO" Name="CustomerContact110">
         <AttrNames>
-          <Item Value="FirstName"/>
-          <Item Value="MiddleName"/>
           <Item Value="Title"/>
           <Item Value="LastName"/>
-          <Item Value="AddressId"/>
+          <Item Value="MiddleName"/>
+          <Item Value="FirstName"/>
           <Item Value="AccountId"/>
-          <Item Value="DepartmentId"/>
-          <Item Value="WorkPhone"/>
           <Item Value="MobilePhone"/>
           <Item Value="Email"/>
-          <Item Value="InfluenceLevel"/>
-          <Item Value="IsPrimaryContact"/>
-          <Item Value="CreationDate"/>
-          <Item Value="ModifiedDate"/>
-          <Item Value="CreatedBy"/>
-          <Item Value="ModifiedBy"/>
           <Item Value="Description"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="CustomerContact1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="CustomerContact1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

@@ -25,6 +25,29 @@
     Name="emailVar"
     Kind="viewcriteria"
     Type="java.lang.String"/>
+  <ViewAccessor
+    Name="AddressVO1"
+    ViewObjectName="sfa.model.uiview.AddressVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AddressId"
+    ListVOName="AddressVO1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AddressId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AddressId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Street"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
   <EntityUsage
     Name="CustomerAccountEO"
     Entity="sfa.model.entity.CustomerAccountEO"/>
@@ -40,37 +63,82 @@
     PrecisionRule="true"
     EntityAttrName="AccountName"
     EntityUsage="CustomerAccountEO"
-    AliasName="ACCOUNT_NAME"/>
+    AliasName="ACCOUNT_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerAccountVO.AccountName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AddressId"
     PrecisionRule="true"
     EntityAttrName="AddressId"
     EntityUsage="CustomerAccountEO"
-    AliasName="ADDRESS_ID"/>
+    AliasName="ADDRESS_ID"
+    LOVName="LOV_AddressId">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerAccountVO.AddressId_LABEL"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AccountUrl"
     PrecisionRule="true"
     EntityAttrName="AccountUrl"
     EntityUsage="CustomerAccountEO"
-    AliasName="ACCOUNT_URL"/>
+    AliasName="ACCOUNT_URL">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerAccountVO.AccountUrl_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ParentAccountId"
     PrecisionRule="true"
     EntityAttrName="ParentAccountId"
     EntityUsage="CustomerAccountEO"
-    AliasName="PARENT_ACCOUNT_ID"/>
+    AliasName="PARENT_ACCOUNT_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerAccountVO.ParentAccountId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Ceo"
     PrecisionRule="true"
     EntityAttrName="Ceo"
     EntityUsage="CustomerAccountEO"
-    AliasName="CEO"/>
+    AliasName="CEO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerAccountVO.Ceo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="NoOfEmployees"
     PrecisionRule="true"
     EntityAttrName="NoOfEmployees"
     EntityUsage="CustomerAccountEO"
-    AliasName="NO_OF_EMPLOYEES"/>
+    AliasName="NO_OF_EMPLOYEES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerAccountVO.NoOfEmployees_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Email"
     PrecisionRule="true"
@@ -82,19 +150,40 @@
     PrecisionRule="true"
     EntityAttrName="Phone"
     EntityUsage="CustomerAccountEO"
-    AliasName="PHONE"/>
+    AliasName="PHONE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerAccountVO.Phone_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PrimaryContactId"
     PrecisionRule="true"
     EntityAttrName="PrimaryContactId"
     EntityUsage="CustomerAccountEO"
-    AliasName="PRIMARY_CONTACT_ID"/>
+    AliasName="PRIMARY_CONTACT_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerAccountVO.PrimaryContactId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="RelatedOpportunityId"
     PrecisionRule="true"
     EntityAttrName="RelatedOpportunityId"
     EntityUsage="CustomerAccountEO"
-    AliasName="RELATED_OPPORTUNITY_ID"/>
+    AliasName="RELATED_OPPORTUNITY_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerAccountVO.RelatedOpportunityId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreationDate"
     PrecisionRule="true"
@@ -124,7 +213,16 @@
     PrecisionRule="true"
     EntityAttrName="Description"
     EntityUsage="CustomerAccountEO"
-    AliasName="DESCRIPTION"/>
+    AliasName="DESCRIPTION">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHEIGHT
+          Value="3"/>
+        <DISPLAYWIDTH
+          Value="40"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="CustomerAccountSearchCriteria"
     ViewObjectName="sfa.model.uiview.CustomerAccountVO"
@@ -182,4 +280,8 @@
     ViewLink="sfa.model.uiview.FkCustomerContactAccoundIdLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="sfa.model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

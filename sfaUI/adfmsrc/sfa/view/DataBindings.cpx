@@ -10,11 +10,13 @@
     <page path="/ContactSearch.jsff" usageId="sfa_view_ContactSearchPageDef"/>
     <page path="/AccountSearch.jsff" usageId="sfa_view_AccountSearchPageDef"/>
     <page path="/Home.jspx" usageId="sfa_view_HomePageDef"/>
+    <page path="/account.jsff" usageId="sfa_view_accountPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="sfa_view_ContactSearchPageDef" path="sfa.view.pageDefs.ContactSearchPageDef"/>
     <page id="sfa_view_AccountSearchPageDef" path="sfa.view.pageDefs.AccountSearchPageDef"/>
     <page id="sfa_view_HomePageDef" path="sfa.view.pageDefs.HomePageDef"/>
+    <page id="sfa_view_accountPageDef" path="sfa.view.pageDefs.accountPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleAMDataControl" Package="sfa.model.uiview"

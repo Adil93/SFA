@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top"/>
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:panelFormLayout id="pfl1">
+        <af:inputText value="#{bindings.AccountName.inputValue}" label="#{bindings.AccountName.hints.label}"
+                      required="#{bindings.AccountName.hints.mandatory}"
+                      columns="#{bindings.AccountName.hints.displayWidth}"
+                      maximumLength="#{bindings.AccountName.hints.precision}"
+                      shortDesc="#{bindings.AccountName.hints.tooltip}" id="it1">
+          <f:validator binding="#{bindings.AccountName.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.AddressId.inputValue}" label="#{bindings.AddressId.hints.label}"
+                      required="#{bindings.AddressId.hints.mandatory}"
+                      columns="#{bindings.AddressId.hints.displayWidth}"
+                      maximumLength="#{bindings.AddressId.hints.precision}"
+                      shortDesc="#{bindings.AddressId.hints.tooltip}" id="it2">
+          <f:validator binding="#{bindings.AddressId.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.AddressId.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.AccountUrl.inputValue}" label="#{bindings.AccountUrl.hints.label}"
+                      required="#{bindings.AccountUrl.hints.mandatory}"
+                      columns="#{bindings.AccountUrl.hints.displayWidth}"
+                      maximumLength="#{bindings.AccountUrl.hints.precision}"
+                      shortDesc="#{bindings.AccountUrl.hints.tooltip}" id="it3">
+          <f:validator binding="#{bindings.AccountUrl.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.ParentAccountId.inputValue}" label="#{bindings.ParentAccountId.hints.label}"
+                      required="#{bindings.ParentAccountId.hints.mandatory}"
+                      columns="#{bindings.ParentAccountId.hints.displayWidth}"
+                      maximumLength="#{bindings.ParentAccountId.hints.precision}"
+                      shortDesc="#{bindings.ParentAccountId.hints.tooltip}" id="it4">
+          <f:validator binding="#{bindings.ParentAccountId.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.ParentAccountId.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.Ceo.inputValue}" label="#{bindings.Ceo.hints.label}"
+                      required="#{bindings.Ceo.hints.mandatory}" columns="#{bindings.Ceo.hints.displayWidth}"
+                      maximumLength="#{bindings.Ceo.hints.precision}" shortDesc="#{bindings.Ceo.hints.tooltip}"
+                      id="it5">
+          <f:validator binding="#{bindings.Ceo.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.NoOfEmployees.inputValue}" label="#{bindings.NoOfEmployees.hints.label}"
+                      required="#{bindings.NoOfEmployees.hints.mandatory}"
+                      columns="#{bindings.NoOfEmployees.hints.displayWidth}"
+                      maximumLength="#{bindings.NoOfEmployees.hints.precision}"
+                      shortDesc="#{bindings.NoOfEmployees.hints.tooltip}" id="it6">
+          <f:validator binding="#{bindings.NoOfEmployees.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.NoOfEmployees.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
+                      required="#{bindings.Email.hints.mandatory}" columns="#{bindings.Email.hints.displayWidth}"
+                      maximumLength="#{bindings.Email.hints.precision}" shortDesc="#{bindings.Email.hints.tooltip}"
+                      id="it7">
+          <f:validator binding="#{bindings.Email.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.Phone.inputValue}" label="#{bindings.Phone.hints.label}"
+                      required="#{bindings.Phone.hints.mandatory}" columns="#{bindings.Phone.hints.displayWidth}"
+                      maximumLength="#{bindings.Phone.hints.precision}" shortDesc="#{bindings.Phone.hints.tooltip}"
+                      id="it8">
+          <f:validator binding="#{bindings.Phone.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.PrimaryContactId.inputValue}" label="#{bindings.PrimaryContactId.hints.label}"
+                      required="#{bindings.PrimaryContactId.hints.mandatory}"
+                      columns="#{bindings.PrimaryContactId.hints.displayWidth}"
+                      maximumLength="#{bindings.PrimaryContactId.hints.precision}"
+                      shortDesc="#{bindings.PrimaryContactId.hints.tooltip}" id="it9">
+          <f:validator binding="#{bindings.PrimaryContactId.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.PrimaryContactId.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.RelatedOpportunityId.inputValue}"
+                      label="#{bindings.RelatedOpportunityId.hints.label}"
+                      required="#{bindings.RelatedOpportunityId.hints.mandatory}"
+                      columns="#{bindings.RelatedOpportunityId.hints.displayWidth}"
+                      maximumLength="#{bindings.RelatedOpportunityId.hints.precision}"
+                      shortDesc="#{bindings.RelatedOpportunityId.hints.tooltip}" id="it10">
+          <f:validator binding="#{bindings.RelatedOpportunityId.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.RelatedOpportunityId.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.Description.inputValue}" label="#{bindings.Description.hints.label}"
+                      required="#{bindings.Description.hints.mandatory}"
+                      columns="#{bindings.Description.hints.displayWidth}"
+                      maximumLength="#{bindings.Description.hints.precision}"
+                      shortDesc="#{bindings.Description.hints.tooltip}" id="it11">
+          <f:validator binding="#{bindings.Description.validator}"/>
+        </af:inputText>
+        <af:panelGroupLayout id="pgl1" inlineStyle="height:50px;">        
+          <af:button text="Save and Close" id="b1"/>
+          <af:spacer width="10" height="10" id="s2"/>
+          <af:button text="Save and Continue" id="b3"/>
+          <af:spacer width="10" height="10" id="s1"/>
+          <af:button text="Cancel" id="b2" action="cancelAccount"/>
+        </af:panelGroupLayout>
+        <f:facet name="footer"/>
+      </af:panelFormLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

@@ -11,7 +11,8 @@
                     </f:facet>
                     <f:facet name="navigation">
                         <af:panelList id="pl1">
-                            <af:link text="Contacts" id="l1" partialSubmit="true" partialTriggers="l1">
+                            <af:link text="Contacts" id="l1" partialSubmit="true" partialTriggers="l1"
+                                     inlineStyle="font-size:large;">
                                 <af:setPropertyListener from="contact"
                                                         to="#{viewScope.DynamicRegionBean.currentTF}"
                                                         type="action"/>
@@ -35,6 +36,7 @@
                     <f:attribute name="brandingTitle" value="Sales Force Automation"/>
                     <f:facet name="innerToolbar"/>
                     <f:facet name="about"/>
+                    <f:attribute name="headerSplitterPosition" value="30"/>
                 </af:pageTemplate>
             </af:form>
         </af:document>

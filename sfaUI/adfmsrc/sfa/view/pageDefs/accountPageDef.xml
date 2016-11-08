@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="accountPageDef"
+                Package="sfa.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CustomerAccount1" RangeSize="25" DataControl="AppModuleAMDataControl"
+              id="CustomerAccount1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="AccountName">
+      <AttrNames>
+        <Item Value="AccountName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="AddressId">
+      <AttrNames>
+        <Item Value="AddressId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="AccountUrl">
+      <AttrNames>
+        <Item Value="AccountUrl"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="ParentAccountId">
+      <AttrNames>
+        <Item Value="ParentAccountId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="Ceo">
+      <AttrNames>
+        <Item Value="Ceo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="NoOfEmployees">
+      <AttrNames>
+        <Item Value="NoOfEmployees"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="Phone">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="PrimaryContactId">
+      <AttrNames>
+        <Item Value="PrimaryContactId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="RelatedOpportunityId">
+      <AttrNames>
+        <Item Value="RelatedOpportunityId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

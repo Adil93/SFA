@@ -57,5 +57,25 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="CustomerAccount1Iterator" id="CustomerAccount12">
+      <nodeDefinition DefName="sfa.model.uiview.CustomerAccountVO" Name="CustomerAccount120">
+        <AttrNames>
+          <Item Value="AccountName"/>
+          <Item Value="AccountUrl"/>
+          <Item Value="ParentAccountId"/>
+          <Item Value="Ceo"/>
+          <Item Value="NoOfEmployees"/>
+          <Item Value="Email"/>
+          <Item Value="Phone"/>
+          <Item Value="PrimaryContactId"/>
+          <Item Value="RelatedOpportunityId"/>
+          <Item Value="CreationDate"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="CustomerAccount1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="CustomerAccount1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

@@ -5,20 +5,73 @@
    <View
       id="View2">
       <property
-         name="activityId">view1</property>
+         name="activityId">searchaccount</property>
       <property
          name="pageFragment">true</property>
       <property
-         name="x">441.0</property>
+         name="x">442.0</property>
       <property
          name="start">true</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>view1&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>searchaccount&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">137.60156</property>
+         name="y">130.49805</property>
       <property
          name="page">/AccountSearch.jsff</property>
       <property
          name="exceptionHandler">false</property>
    </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">createaccount</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">945.6904</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Account&lt;/b>&lt;/p>&lt;p>Activity ID:  createaccount&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">133.74707</property>
+      <property
+         name="page">/account.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">editAccount</property>
+      <property
+         name="sdm:polyPoints">R50,483.02698,130.49805,904.66345,133.74707,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View3"
+      to="View2">
+      <property
+         name="tosrcid">__9</property>
+      <property
+         name="fromOutcome">cancelAccount</property>
+      <property
+         name="fromsrcid">__8</property>
+      <property
+         name="sdm:polyPoints">L58,904.6365,140.74707,483.0,137.49805,R58</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase11"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">createAccount</property>
+      <property
+         name="sdm:polyPoints">R42,483.05392,123.49805,904.6904,126.74707,L42</property>
+   </ControlFlowCase>
 </SDM>
