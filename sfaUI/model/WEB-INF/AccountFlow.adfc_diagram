@@ -48,7 +48,7 @@
       <property
          name="fromOutcome">editAccount</property>
       <property
-         name="sdm:polyPoints">R50,483.02698,130.49805,904.66345,133.74707,L50</property>
+         name="sdm:polyPoints">R50,483.02698,130.43164,904.66345,133.68066,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -72,6 +72,6 @@
       <property
          name="fromOutcome">createAccount</property>
       <property
-         name="sdm:polyPoints">R42,483.05392,123.49805,904.6904,126.74707,L42</property>
+         name="sdm:polyPoints">R42,483.05392,123.43164,904.6904,126.680664,L42</property>
    </ControlFlowCase>
 </SDM>

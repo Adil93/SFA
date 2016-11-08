@@ -17,7 +17,8 @@
                                                         to="#{viewScope.DynamicRegionBean.currentTF}"
                                                         type="action"/>
                             </af:link>
-                            <af:link text="Account" id="l2" partialSubmit="true" partialTriggers="l2">
+                            <af:link text="Account" id="l2" partialSubmit="true" partialTriggers="l2"
+                                     inlineStyle="font-size:large;">
                                 <af:setPropertyListener from="account"
                                                         to="#{viewScope.DynamicRegionBean.currentTF}"
                                                         type="action"/>

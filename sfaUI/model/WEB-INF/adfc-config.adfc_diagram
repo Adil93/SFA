@@ -7,14 +7,16 @@
       <property
          name="activityId">Home</property>
       <property
-         name="x">229.5</property>
+         name="x">382.5</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Home&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">147.66602</property>
+         name="y">178.59961</property>
       <property
          name="page">/Home.jspx</property>
       <property
          name="exceptionHandler">false</property>
+      <property
+         name="thumbnailExpanded">true</property>
    </View>
 </SDM>

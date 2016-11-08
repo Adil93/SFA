@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="ContactFormPageDef"
+                Package="sfa.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CustomerContact1" RangeSize="25" DataControl="AppModuleAMDataControl"
+              id="CustomerContact1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="CustomerContact1Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerContact1Iterator" id="MiddleName">
+      <AttrNames>
+        <Item Value="MiddleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerContact1Iterator" id="Title">
+      <AttrNames>
+        <Item Value="Title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerContact1Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerContact1Iterator" id="AddressId">
+      <AttrNames>
+        <Item Value="AddressId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerContact1Iterator" id="AccountId">
+      <AttrNames>
+        <Item Value="AccountId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerContact1Iterator" id="DepartmentId">
+      <AttrNames>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerContact1Iterator" id="WorkPhone">
+      <AttrNames>
+        <Item Value="WorkPhone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerContact1Iterator" id="MobilePhone">
+      <AttrNames>
+        <Item Value="MobilePhone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerContact1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerContact1Iterator" id="InfluenceLevel">
+      <AttrNames>
+        <Item Value="InfluenceLevel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerContact1Iterator" id="IsPrimaryContact">
+      <AttrNames>
+        <Item Value="IsPrimaryContact"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerContact1Iterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CustomerContact1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>
