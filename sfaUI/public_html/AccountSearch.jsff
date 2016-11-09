@@ -20,10 +20,10 @@
         <f:facet name="toolbar">
           <af:toolbar id="t2">
             <af:button actionListener="#{bindings.CreateInsert.execute}"
-                       disabled="#{!bindings.CreateInsert.enabled}" id="b3" icon="#{resource['images:Create.png']}" action="createAccount"/>
-            <af:button id="b2" action="editAccount" icon="#{resource['images:EditDocument.png']}"/>
+                       disabled="#{!bindings.CreateInsert.enabled}" id="b3" icon="#{resource['images:Create.png']}" action="createAccount" shortDesc="create"/>
+            <af:button id="b2" action="editAccount" icon="#{resource['images:EditDocument.png']}" shortDesc="edit"/>
             <af:button actionListener="#{bindings.Delete.execute}" disabled="#{!bindings.Delete.enabled}"
-                       id="b1" icon="#{resource['images:remove.png']}" action="delete"/>
+                       id="b1" icon="#{resource['images:remove.png']}" action="delete" shortDesc="delete"/>
           </af:toolbar>
         </f:facet>
         <f:facet name="statusbar"/>
