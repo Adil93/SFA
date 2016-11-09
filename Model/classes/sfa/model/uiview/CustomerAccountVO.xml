@@ -29,12 +29,24 @@
     Name="AddressVO1"
     ViewObjectName="sfa.model.uiview.AddressVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="OpportunityVO1"
+    ViewObjectName="sfa.model.uiview.OpportunityVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CustomerAccountVO1"
+    ViewObjectName="sfa.model.uiview.CustomerAccountVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CustomerContactVO1"
+    ViewObjectName="sfa.model.uiview.CustomerContactVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_AddressId"
     ListVOName="AddressVO1"
-    ComboRowCountHint="10"
-    NullValueFlag="none"
-    MRUCount="0">
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="AddressId"/>
     </AttrArray>
@@ -44,9 +56,67 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Street"/>
+      <Item Value="State"/>
+      <Item Value="City"/>
+      <Item Value="Country"/>
+      <Item Value="PostalCode"/>
     </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RelatedOpportunityId"
+    ListVOName="OpportunityVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RelatedOpportunityId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="OpportunityId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="OpportunityName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ParentAccountId"
+    ListVOName="CustomerAccountVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ParentAccountId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AccountName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PrimaryContactId"
+    ListVOName="CustomerContactVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PrimaryContactId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ContactId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
     Name="CustomerAccountEO"
@@ -83,7 +153,7 @@
         <LABEL
           ResId="sfa.model.uiview.CustomerAccountVO.AddressId_LABEL"/>
         <CONTROLTYPE
-          Value="combo_lov"/>
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -105,11 +175,14 @@
     PrecisionRule="true"
     EntityAttrName="ParentAccountId"
     EntityUsage="CustomerAccountEO"
-    AliasName="PARENT_ACCOUNT_ID">
+    AliasName="PARENT_ACCOUNT_ID"
+    LOVName="LOV_ParentAccountId">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="sfa.model.uiview.CustomerAccountVO.ParentAccountId_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -163,11 +236,14 @@
     PrecisionRule="true"
     EntityAttrName="PrimaryContactId"
     EntityUsage="CustomerAccountEO"
-    AliasName="PRIMARY_CONTACT_ID">
+    AliasName="PRIMARY_CONTACT_ID"
+    LOVName="LOV_PrimaryContactId">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="sfa.model.uiview.CustomerAccountVO.PrimaryContactId_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -176,11 +252,14 @@
     PrecisionRule="true"
     EntityAttrName="RelatedOpportunityId"
     EntityUsage="CustomerAccountEO"
-    AliasName="RELATED_OPPORTUNITY_ID">
+    AliasName="RELATED_OPPORTUNITY_ID"
+    LOVName="LOV_RelatedOpportunityId">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="sfa.model.uiview.CustomerAccountVO.RelatedOpportunityId_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

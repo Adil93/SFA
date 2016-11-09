@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47"
+                id="AccountFlow_AccountFlow_Execute1PageDef" Package="sfa.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="CustomerAccount1" RangeSize="25" DataControl="AppModuleAMDataControl"
+              id="CustomerAccount1Iterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="CustomerAccount1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

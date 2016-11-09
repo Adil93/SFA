@@ -21,10 +21,10 @@
         <f:facet name="toolbar">
           <af:toolbar id="t2">
             <af:button actionListener="#{bindings.CreateInsert.execute}"
-                       disabled="#{!bindings.CreateInsert.enabled}" id="b3" icon="#{resource['images:Create.png']}" action="editAccount"/>
+                       disabled="#{!bindings.CreateInsert.enabled}" id="b3" icon="#{resource['images:Create.png']}" action="createAccount"/>
             <af:button id="b2" action="editAccount" icon="#{resource['images:EditDocument.png']}"/>
             <af:button actionListener="#{bindings.Delete.execute}" disabled="#{!bindings.Delete.enabled}"
-                       id="b1" icon="#{resource['images:remove.png']}"/>
+                       id="b1" icon="#{resource['images:remove.png']}" action="delete"/>
           </af:toolbar>
         </f:facet>
         <f:facet name="statusbar"/>
@@ -34,11 +34,11 @@
                   rowBandingInterval="0" selectedRowKeys="#{bindings.CustomerAccount12.collectionModel.selectedRow}"
                   selectionListener="#{bindings.CustomerAccount12.collectionModel.makeCurrent}" rowSelection="single"
                   fetchSize="#{bindings.CustomerAccount12.rangeSize}" id="t1" columnStretching="column:c1"
-                  partialTriggers="::b3 ::b1">
+                  partialTriggers="::b3 ::b1 l1">
           <af:column sortProperty="#{bindings.CustomerAccount12.hints.AccountName.name}" sortable="true"
                      headerText="#{bindings.CustomerAccount12.hints.AccountName.label}" id="c1">
-            <af:outputText value="#{row.AccountName}"
-                           shortDesc="#{bindings.CustomerAccount12.hints.AccountName.tooltip}" id="ot1"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue.execute}" text="#{row.AccountName}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue.enabled}" id="l1" action="accountDetails"/>
           </af:column>
           <af:column sortProperty="#{bindings.CustomerAccount12.hints.AccountUrl.name}" sortable="true"
                      headerText="#{bindings.CustomerAccount12.hints.AccountUrl.label}" id="c2">

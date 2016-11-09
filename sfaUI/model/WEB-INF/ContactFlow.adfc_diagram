@@ -1,7 +1,12 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <SDM>
    <OverallProperties
-      id="OverallProperties1"/>
+      id="OverallProperties1">
+      <property
+         name="x">20.0</property>
+      <property
+         name="y">32.80078</property>
+   </OverallProperties>
    <View
       id="View3">
       <property
@@ -13,7 +18,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>contactcreate&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">63.371094</property>
+         name="y">63.10547</property>
       <property
          name="page">/ContactForm.jsff</property>
       <property
@@ -46,7 +51,7 @@
       <property
          name="fromOutcome">contactCreate</property>
       <property
-         name="sdm:polyPoints">R50,101.06807,64.10156,491.2978,63.304688,L50</property>
+         name="sdm:polyPoints">R50,101.06925,64.10156,491.29498,63.039062,L50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall11">
@@ -82,7 +87,7 @@
       <property
          name="fromOutcome">cancel</property>
       <property
-         name="sdm:polyPoints">L58,492.46094,70.30469,338.5,184.83594,R50</property>
+         name="sdm:polyPoints">L58,492.46094,70.03906,338.5,184.83594,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -102,7 +107,7 @@
       <property
          name="fromOutcome">submit</property>
       <property
-         name="sdm:polyPoints">L42,492.46094,56.304688,338.5,-70.42969,R50</property>
+         name="sdm:polyPoints">L42,492.46094,56.10547,338.5,-70.42969,R50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall19">
@@ -125,7 +130,7 @@
       <property
          name="fromOutcome">submitContinue</property>
       <property
-         name="sdm:polyPoints">R46,574.51697,59.804688,757.5,62.734375,L46</property>
+         name="sdm:polyPoints">R46,574.52203,59.539062,757.5,62.734375,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -135,7 +140,7 @@
       <property
          name="fromOutcome">*</property>
       <property
-         name="sdm:polyPoints">L54,757.444,69.734375,574.46094,66.80469,R54</property>
+         name="sdm:polyPoints">L54,757.4389,69.734375,574.46094,66.53906,R54</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall21">
@@ -191,7 +196,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>ContactDetails&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">290.90234</property>
+         name="y">290.63672</property>
       <property
          name="page">/ContactDetails.jsff</property>
       <property
@@ -205,7 +210,7 @@
       <property
          name="fromOutcome">contactDetails</property>
       <property
-         name="sdm:polyPoints">B44,55.34668,118.10156,53.85742,236.79204,T44</property>
+         name="sdm:polyPoints">B44,55.34668,118.10156,53.85742,236.5263,T44</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -215,6 +220,6 @@
       <property
          name="fromOutcome">cancelDetails</property>
       <property
-         name="sdm:polyPoints">T56,60.85742,236.83594,62.34668,118.14546,B56</property>
+         name="sdm:polyPoints">T56,60.85742,236.57031,62.34668,118.14556,B56</property>
    </ControlFlowCase>
 </SDM>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="accountPageDef"
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="AccountDetailsPageDef"
                 Package="sfa.view.pageDefs">
   <parameters/>
   <executables>
@@ -46,12 +46,34 @@
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="CustomerAccount1Iterator" StaticList="false" Uses="LOV_RelatedOpportunityId"
           id="RelatedOpportunityId" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="CreationDate">
+      <AttrNames>
+        <Item Value="CreationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="ModifiedDate">
+      <AttrNames>
+        <Item Value="ModifiedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerAccount1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
     <attributeValues IterBinding="CustomerAccount1Iterator" id="Description">
       <AttrNames>
         <Item Value="Description"/>
       </AttrNames>
     </attributeValues>
-    <action IterBinding="CustomerAccount1Iterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
+    <action IterBinding="CustomerAccount1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="CustomerAccount1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="CustomerAccount1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="CustomerAccount1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
   </bindings>
 </pageDefinition>

@@ -10,8 +10,35 @@
     </view>
     <view id="createaccount">
       <display-name>Account</display-name>
-      <page>/account.jsff</page>
+      <page>/AccountForm.jsff</page>
     </view>
+    <method-call id="Commit">
+      <method>#{bindings.Commit.execute}</method>
+      <outcome>
+        <fixed-outcome>Commit</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="Rollback">
+      <method>#{bindings.Rollback.execute}</method>
+      <outcome>
+        <fixed-outcome>Rollback</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="Commit1">
+      <method>#{bindings.Commit.execute}</method>
+      <outcome>
+        <fixed-outcome>Commit</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="AccountDetails">
+      <page>/AccountDetails.jsff</page>
+    </view>
+    <method-call id="Execute">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome>
+        <fixed-outcome>Execute</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__5">
       <from-activity-id>searchaccount</from-activity-id>
       <control-flow-case id="__6">
@@ -22,11 +49,58 @@
         <from-outcome>createAccount</from-outcome>
         <to-activity-id>createaccount</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__19">
+        <from-outcome>accountDetails</from-outcome>
+        <to-activity-id>AccountDetails</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__2">
+        <from-outcome>delete</from-outcome>
+        <to-activity-id>Commit</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__1">
+      <from-activity-id>createaccount</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>cancelAccount</from-outcome>
+        <to-activity-id>Rollback</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__13">
+        <from-outcome>submitContinue</from-outcome>
+        <to-activity-id>Commit1</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__14">
+        <from-outcome>submit</from-outcome>
+        <to-activity-id>Commit</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__8">
-      <from-activity-id>createaccount</from-activity-id>
+      <from-activity-id>Rollback</from-activity-id>
       <control-flow-case id="__9">
-        <from-outcome>cancelAccount</from-outcome>
+        <to-activity-id>searchaccount</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__20">
+      <from-activity-id>AccountDetails</from-activity-id>
+      <control-flow-case id="__21">
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>searchaccount</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>Commit1</from-activity-id>
+      <control-flow-case id="__7">
+        <to-activity-id>createaccount</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__10">
+      <from-activity-id>Commit</from-activity-id>
+      <control-flow-case id="__12">
+        <to-activity-id>Execute</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id>Execute</from-activity-id>
+      <control-flow-case id="__16">
         <to-activity-id>searchaccount</to-activity-id>
       </control-flow-case>
     </control-flow-rule>

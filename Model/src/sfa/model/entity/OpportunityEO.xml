@@ -186,6 +186,14 @@
       <Attr Name="_DisplaySize" Value="500"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="OpportunityName"
+    Precision="100"
+    ColumnName="OPPORTUNITY_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="OPPORTUNITY"/>
   <AccessorAttribute
     Name="Interaction"
     Association="sfa.model.entity.SysC007420Assoc"

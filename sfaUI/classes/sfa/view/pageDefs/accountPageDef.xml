@@ -13,21 +13,15 @@
         <Item Value="AccountName"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="CustomerAccount1Iterator" id="AddressId">
-      <AttrNames>
-        <Item Value="AddressId"/>
-      </AttrNames>
-    </attributeValues>
+    <list IterBinding="CustomerAccount1Iterator" StaticList="false" Uses="LOV_AddressId" id="AddressId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="CustomerAccount1Iterator" id="AccountUrl">
       <AttrNames>
         <Item Value="AccountUrl"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="CustomerAccount1Iterator" id="ParentAccountId">
-      <AttrNames>
-        <Item Value="ParentAccountId"/>
-      </AttrNames>
-    </attributeValues>
+    <list IterBinding="CustomerAccount1Iterator" StaticList="false" Uses="LOV_ParentAccountId" id="ParentAccountId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="CustomerAccount1Iterator" id="Ceo">
       <AttrNames>
         <Item Value="Ceo"/>
@@ -48,20 +42,16 @@
         <Item Value="Phone"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="CustomerAccount1Iterator" id="PrimaryContactId">
-      <AttrNames>
-        <Item Value="PrimaryContactId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="CustomerAccount1Iterator" id="RelatedOpportunityId">
-      <AttrNames>
-        <Item Value="RelatedOpportunityId"/>
-      </AttrNames>
-    </attributeValues>
+    <list IterBinding="CustomerAccount1Iterator" StaticList="false" Uses="LOV_PrimaryContactId" id="PrimaryContactId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CustomerAccount1Iterator" StaticList="false" Uses="LOV_RelatedOpportunityId"
+          id="RelatedOpportunityId" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="CustomerAccount1Iterator" id="Description">
       <AttrNames>
         <Item Value="Description"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="CustomerAccount1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
   </bindings>
 </pageDefinition>

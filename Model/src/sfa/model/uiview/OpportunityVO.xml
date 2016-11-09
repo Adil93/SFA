@@ -125,6 +125,14 @@
     EntityAttrName="Description"
     EntityUsage="OpportunityEO"
     AliasName="DESCRIPTION"/>
+  <ViewAttribute
+    Name="OpportunityName"
+    IsUpdateable="false"
+    IsSelected="false"
+    PrecisionRule="true"
+    AliasName="OPPORTUNITY_NAME"
+    EntityAttrName="OpportunityName"
+    EntityUsage="OpportunityEO"/>
   <ViewLinkAccessor
     Name="Interaction"
     ViewLink="sfa.model.uiview.SysC007420Link"

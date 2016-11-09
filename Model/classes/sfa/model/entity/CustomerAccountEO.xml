@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="CUSTOMER_ACCOUNT"
   AliasName="CustomerAccountEO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="AccountId"
     IsNotNull="true"
@@ -23,7 +24,6 @@
     PrimaryKey="true">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="CustomerAccountEORow"/>
   </Attribute>
   <Attribute
@@ -100,6 +100,13 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <validation:RegExpValidationBean
+      Name="EmailRule0"
+      ResId="sfa.model.entity.CustomerAccountEO.Email_Rule_0"
+      OnAttribute="Email"
+      Pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+      Flags="CaseInsensitive"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="Phone"
@@ -282,4 +289,8 @@
       <Item Value="sfa.model.entity.CustomerAccountEO.PrimaryContactId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="sfa.model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>
