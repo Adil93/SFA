@@ -24,6 +24,76 @@
     Name="firstNameVar"
     Kind="viewcriteria"
     Type="java.lang.String"/>
+  <ViewAccessor
+    Name="AddressVO1"
+    ViewObjectName="sfa.model.uiview.AddressVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DepartmentVO1"
+    ViewObjectName="sfa.model.uiview.DepartmentVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CustomerAccountVO1"
+    ViewObjectName="sfa.model.uiview.CustomerAccountVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AddressId"
+    ListVOName="AddressVO1"
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    <AttrArray Name="AttrNames">
+      <Item Value="AddressId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AddressId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="City"/>
+      <Item Value="Country"/>
+      <Item Value="PostalCode"/>
+      <Item Value="State"/>
+      <Item Value="Street"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DepartmentId"
+    ListVOName="DepartmentVO1"
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AccountId"
+    ListVOName="CustomerAccountVO1"
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    <AttrArray Name="AttrNames">
+      <Item Value="AccountId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AccountId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AccountName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <SQLQuery><![CDATA[SELECT CustomerContactEO.CONTACT_ID, 
        CustomerContactEO.FIRST_NAME, 
        CustomerContactEO.MIDDLE_NAME, 
@@ -59,7 +129,14 @@ FROM  CUSTOMER_CONTACT CustomerContactEO]]></SQLQuery>
     PrecisionRule="true"
     EntityAttrName="FirstName"
     EntityUsage="CustomerContactEO"
-    AliasName="FIRST_NAME"/>
+    AliasName="FIRST_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerContactVO.FirstName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MiddleName"
     PrecisionRule="true"
@@ -78,49 +155,124 @@ FROM  CUSTOMER_CONTACT CustomerContactEO]]></SQLQuery>
     PrecisionRule="true"
     EntityAttrName="LastName"
     EntityUsage="CustomerContactEO"
-    AliasName="LAST_NAME"/>
+    AliasName="LAST_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerContactVO.LastName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AddressId"
     PrecisionRule="true"
     EntityAttrName="AddressId"
     EntityUsage="CustomerContactEO"
-    AliasName="ADDRESS_ID"/>
+    AliasName="ADDRESS_ID"
+    LOVName="LOV_AddressId">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="70"/>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerContactVO.AddressId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AccountId"
     PrecisionRule="true"
     EntityAttrName="AccountId"
     EntityUsage="CustomerContactEO"
-    AliasName="ACCOUNT_ID"/>
+    AliasName="ACCOUNT_ID"
+    LOVName="LOV_AccountId">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerContactVO.AccountId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DepartmentId"
     PrecisionRule="true"
     EntityAttrName="DepartmentId"
     EntityUsage="CustomerContactEO"
-    AliasName="DEPARTMENT_ID"/>
+    AliasName="DEPARTMENT_ID"
+    LOVName="LOV_DepartmentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerContactVO.DepartmentId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="WorkPhone"
     PrecisionRule="true"
     EntityAttrName="WorkPhone"
     EntityUsage="CustomerContactEO"
-    AliasName="WORK_PHONE"/>
+    AliasName="WORK_PHONE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerContactVO.WorkPhone_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MobilePhone"
     PrecisionRule="true"
     EntityAttrName="MobilePhone"
     EntityUsage="CustomerContactEO"
-    AliasName="MOBILE_PHONE"/>
+    AliasName="MOBILE_PHONE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerContactVO.MobilePhone_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Email"
     PrecisionRule="true"
     EntityAttrName="Email"
     EntityUsage="CustomerContactEO"
-    AliasName="EMAIL"/>
+    AliasName="EMAIL">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="InfluenceLevel"
     PrecisionRule="true"
     EntityAttrName="InfluenceLevel"
     EntityUsage="CustomerContactEO"
-    AliasName="INFLUENCE_LEVEL"/>
+    AliasName="INFLUENCE_LEVEL">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="sfa.model.uiview.CustomerContactVO.InfluenceLevel_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="IsPrimaryContact"
     PrecisionRule="true"
@@ -156,7 +308,16 @@ FROM  CUSTOMER_CONTACT CustomerContactEO]]></SQLQuery>
     PrecisionRule="true"
     EntityAttrName="Description"
     EntityUsage="CustomerContactEO"
-    AliasName="DESCRIPTION"/>
+    AliasName="DESCRIPTION">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="70"/>
+        <DISPLAYHEIGHT
+          Value="2"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="CustomerSearchCreteria"
     ViewObjectName="sfa.model.uiview.CustomerContactVO"

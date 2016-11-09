@@ -34,7 +34,7 @@
                   rowBandingInterval="0" selectedRowKeys="#{bindings.CustomerAccount12.collectionModel.selectedRow}"
                   selectionListener="#{bindings.CustomerAccount12.collectionModel.makeCurrent}" rowSelection="single"
                   fetchSize="#{bindings.CustomerAccount12.rangeSize}" id="t1" columnStretching="column:c1"
-                  inlineStyle="width:100%;" partialTriggers="::b3 ::b1">
+                  partialTriggers="::b3 ::b1">
           <af:column sortProperty="#{bindings.CustomerAccount12.hints.AccountName.name}" sortable="true"
                      headerText="#{bindings.CustomerAccount12.hints.AccountName.label}" id="c1">
             <af:outputText value="#{row.AccountName}"

@@ -19,6 +19,7 @@
           usageId="sfa_view_ContactFlow_ContactFlow_Commit1PageDef"/>
     <page path="/WEB-INF/ContactFlow.xml#ContactFlow@Execute"
           usageId="sfa_view_ContactFlow_ContactFlow_ExecutePageDef"/>
+    <page path="/ContactDetails.jsff" usageId="sfa_view_ContactDetailsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="sfa_view_ContactSearchPageDef" path="sfa.view.pageDefs.ContactSearchPageDef"/>
@@ -34,6 +35,7 @@
           path="sfa.view.pageDefs.ContactFlow_ContactFlow_Commit1PageDef"/>
     <page id="sfa_view_ContactFlow_ContactFlow_ExecutePageDef"
           path="sfa.view.pageDefs.ContactFlow_ContactFlow_ExecutePageDef"/>
+    <page id="sfa_view_ContactDetailsPageDef" path="sfa.view.pageDefs.ContactDetailsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleAMDataControl" Package="sfa.model.uiview"

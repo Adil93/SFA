@@ -35,6 +35,9 @@
         <fixed-outcome>Execute</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="ContactDetails">
+      <page>/ContactDetails.jsff</page>
+    </view>
     <control-flow-rule id="__1">
       <from-activity-id>searchcontact</from-activity-id>
       <control-flow-case id="__2">
@@ -44,6 +47,10 @@
       <control-flow-case id="__15">
         <from-outcome>delete</from-outcome>
         <to-activity-id>Commit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>contactDetails</from-outcome>
+        <to-activity-id>ContactDetails</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__5">
@@ -82,6 +89,13 @@
     <control-flow-rule id="__10">
       <from-activity-id>Execute</from-activity-id>
       <control-flow-case id="__14">
+        <to-activity-id>searchcontact</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>ContactDetails</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>cancelDetails</from-outcome>
         <to-activity-id>searchcontact</to-activity-id>
       </control-flow-case>
     </control-flow-rule>

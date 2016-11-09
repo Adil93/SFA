@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="CUSTOMER_CONTACT"
   AliasName="CustomerContactEO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="ContactId"
     IsNotNull="true"
@@ -23,7 +24,6 @@
     PrimaryKey="true">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="CustomerContactEORow"/>
   </Attribute>
   <Attribute
@@ -38,6 +38,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <validation:PreDefinedValidationBean
+      Name="FirstNameRule0"
+      ResId="sfa.model.entity.CustomerContactEO.FirstName_Rule_0"
+      Description="Mandatory"
+      ValName="Mandatory"
+      Subtype="MANDATORY"/>
   </Attribute>
   <Attribute
     Name="MiddleName"
@@ -75,6 +81,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <validation:PreDefinedValidationBean
+      Name="LastNameRule0"
+      ResId="sfa.model.entity.CustomerContactEO.LastName_Rule_0"
+      Description="Mandatory"
+      ValName="Mandatory"
+      Subtype="MANDATORY"/>
   </Attribute>
   <Attribute
     Name="AddressId"
@@ -138,6 +150,13 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <validation:RegExpValidationBean
+      Name="EmailRule0"
+      ResId="sfa.model.entity.CustomerContactEO.Email_Rule_0"
+      OnAttribute="Email"
+      Pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+      Flags="CaseInsensitive"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="InfluenceLevel"
@@ -318,4 +337,8 @@
       <Item Value="sfa.model.entity.CustomerContactEO.ModifiedBy"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="sfa.model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

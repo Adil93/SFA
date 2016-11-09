@@ -19,7 +19,7 @@
         <f:facet name="toolbar">
             <af:toolbar id="t2">
             <af:button actionListener="#{bindings.CreateInsert.execute}" icon="#{resource['images:Create.png']}"
-                       disabled="#{!bindings.CreateInsert.enabled}" id="b1" action="contactCreate" hoverIcon="create"/>
+                       disabled="#{!bindings.CreateInsert.enabled}" id="b1" action="contactCreate"/>
             <af:button id="b2" action="contactCreate" icon="#{resource['images:EditDocument.png']}"/>
             <af:button actionListener="#{bindings.Delete.execute}" disabled="#{!bindings.Delete.enabled}"
                        id="b3" icon="#{resource['images:remove.png']}" action="delete" immediate="true"/>
@@ -31,7 +31,7 @@
                   emptyText="#{bindings.CustomerContact11.viewable ? 'No data to display.' : 'Access Denied.'}"
                   rowBandingInterval="0" selectedRowKeys="#{bindings.CustomerContact11.collectionModel.selectedRow}"
                   selectionListener="#{bindings.CustomerContact11.collectionModel.makeCurrent}" rowSelection="single"
-                  fetchSize="#{bindings.CustomerContact11.rangeSize}" id="t1" partialTriggers="::b1 ::b3"
+                  fetchSize="#{bindings.CustomerContact11.rangeSize}" id="t1" partialTriggers="::b1 ::b3 l1"
                   columnStretching="last">
           <af:column sortProperty="#{bindings.CustomerContact11.hints.Title.name}" sortable="true"
                      headerText="#{bindings.CustomerContact11.hints.Title.label}" id="c1" width="56">
@@ -39,8 +39,8 @@
           </af:column>
           <af:column sortProperty="#{bindings.CustomerContact11.hints.LastName.name}" sortable="true"
                      headerText="#{bindings.CustomerContact11.hints.LastName.label}" id="c2" width="144">
-            <af:outputText value="#{row.LastName}" shortDesc="#{bindings.CustomerContact11.hints.LastName.tooltip}"
-                           id="ot2"/>
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue.execute}" text="#{row.LastName}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue.enabled}" id="l1" action="contactDetails"/>
           </af:column>
           <af:column sortProperty="#{bindings.CustomerContact11.hints.MiddleName.name}" sortable="true"
                      headerText="#{bindings.CustomerContact11.hints.MiddleName.label}" id="c3" width="100">

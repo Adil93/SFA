@@ -28,21 +28,12 @@
         <Item Value="LastName"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="CustomerContact1Iterator" id="AddressId">
-      <AttrNames>
-        <Item Value="AddressId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="CustomerContact1Iterator" id="AccountId">
-      <AttrNames>
-        <Item Value="AccountId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="CustomerContact1Iterator" id="DepartmentId">
-      <AttrNames>
-        <Item Value="DepartmentId"/>
-      </AttrNames>
-    </attributeValues>
+    <list IterBinding="CustomerContact1Iterator" StaticList="false" Uses="LOV_AddressId" id="AddressId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CustomerContact1Iterator" StaticList="false" Uses="LOV_AccountId" id="AccountId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="CustomerContact1Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="CustomerContact1Iterator" id="WorkPhone">
       <AttrNames>
         <Item Value="WorkPhone"/>
