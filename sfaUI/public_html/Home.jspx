@@ -40,7 +40,9 @@
                     <f:facet name="status"/>
                     <f:facet name="globalToolbar"/>
                     <f:facet name="globalSearch"/>
-                    <f:facet name="globalTabs"/>
+                    <f:facet name="globalTabs">
+                        <h:commandLink value="Logout" id="cl1" style="color:White; float:right; font-size:13px;vertical-align: top;"/>
+                    </f:facet>
                     <f:facet name="welcome">
                         <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1" partialTriggers="::l1"/>
                     </f:facet>
