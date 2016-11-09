@@ -7,20 +7,23 @@ import oracle.adf.controller.TaskFlowId;
 public class DynamicRegion implements Serializable {
     @SuppressWarnings("compatibility:1724855728318833805")
     private static final long serialVersionUID = -1969927688142037685L;
+    private String welcomeTaskFlowId = "/WEB-INF/WelcomePageFlow.xml#WelcomePageFlow";
     private String contactTaskFlowId = "/WEB-INF/ContactFlow.xml#ContactFlow";
     private String accountTaskFlowID = "/WEB-INF/AccountFlow.xml#AccountFlow";
-    private String currentTF = "contact";
+    private String currentTF = "welcome";
 
     public DynamicRegion() {
     }
 
     public TaskFlowId getDynamicTaskFlowId() {
-        if(this.currentTF.equalsIgnoreCase("contact"))
+        if(this.currentTF.equalsIgnoreCase("welcome")) {
+            return TaskFlowId.parse(welcomeTaskFlowId);
+        } else if(this.currentTF.equalsIgnoreCase("contact")) {
             return TaskFlowId.parse(contactTaskFlowId);
-        else if(this.currentTF.equalsIgnoreCase("account"))
+        } else if(this.currentTF.equalsIgnoreCase("account")) {
             return TaskFlowId.parse(accountTaskFlowID);
-        else
-           return null;
+        }        
+        return null;
         
     }
 

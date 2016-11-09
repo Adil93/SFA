@@ -6,8 +6,10 @@
     <f:facet name="end"/>
     <f:facet name="top"/>
     <f:facet name="bottom"/>
-    <f:facet name="center">
-      <af:panelFormLayout id="pfl1">
+    <f:facet name="center">      
+      <af:panelBox text="Account" id="pb1">
+        <f:facet name="toolbar"/>
+        <af:panelFormLayout id="pfl1">
         <af:inputText value="#{bindings.AccountName.inputValue}" label="#{bindings.AccountName.hints.label}"
                       required="#{bindings.AccountName.hints.mandatory}" readOnly="true"
                       columns="#{bindings.AccountName.hints.displayWidth}"
@@ -125,6 +127,7 @@
           </af:panelGroupLayout>
         </f:facet>
       </af:panelFormLayout>
+      </af:panelBox>
     </f:facet>
   </af:panelStretchLayout>
 </jsp:root>

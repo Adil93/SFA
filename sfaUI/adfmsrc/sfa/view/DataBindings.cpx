@@ -28,6 +28,7 @@
           usageId="sfa_view_AccountFlow_AccountFlow_Commit1PageDef"/>
     <page path="/WEB-INF/AccountFlow.xml#AccountFlow@Execute"
           usageId="sfa_view_AccountFlow_AccountFlow_ExecutePageDef"/>
+    <page path="/welcome.jsff" usageId="sfa_view_welcomePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="sfa_view_ContactSearchPageDef" path="sfa.view.pageDefs.ContactSearchPageDef"/>
@@ -53,6 +54,7 @@
           path="sfa.view.pageDefs.AccountFlow_AccountFlow_Commit1PageDef"/>
     <page id="sfa_view_AccountFlow_AccountFlow_ExecutePageDef"
           path="sfa.view.pageDefs.AccountFlow_AccountFlow_ExecutePageDef"/>
+    <page id="sfa_view_welcomePageDef" path="sfa.view.pageDefs.welcomePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleAMDataControl" Package="sfa.model.uiview"

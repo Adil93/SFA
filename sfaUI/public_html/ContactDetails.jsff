@@ -6,16 +6,18 @@
     <f:facet name="end"/>
     <f:facet name="top"/>
     <f:facet name="bottom"/>
-    <f:facet name="center">
-      <af:panelFormLayout id="pfl1">
-        <af:inputText value="#{bindings.ContactId.inputValue}" label="#{bindings.ContactId.hints.label}"
+    <f:facet name="center">      
+      <af:panelBox text="Contact" id="pb1">
+        <f:facet name="toolbar"/>
+        <af:panelFormLayout id="pfl1">
+        <!--<af:inputText value="#{bindings.ContactId.inputValue}" label="#{bindings.ContactId.hints.label}"
                       required="#{bindings.ContactId.hints.mandatory}" readOnly="true"
                       columns="#{bindings.ContactId.hints.displayWidth}"
                       maximumLength="#{bindings.ContactId.hints.precision}"
                       shortDesc="#{bindings.ContactId.hints.tooltip}" id="it1">
           <f:validator binding="#{bindings.ContactId.validator}"/>
           <af:convertNumber groupingUsed="false" pattern="#{bindings.ContactId.format}"/>
-        </af:inputText>
+        </af:inputText>-->
         <af:inputText value="#{bindings.FirstName.inputValue}" label="#{bindings.FirstName.hints.label}"
                       required="#{bindings.FirstName.hints.mandatory}" readOnly="true"
                       columns="#{bindings.FirstName.hints.displayWidth}"
@@ -154,6 +156,7 @@
           </af:panelGroupLayout>
         </f:facet>
       </af:panelFormLayout>
+      </af:panelBox>
     </f:facet>
   </af:panelStretchLayout>
 </jsp:root>
