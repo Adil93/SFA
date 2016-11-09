@@ -4,16 +4,15 @@
   <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="195"
                     inlineStyle="border-bottom-left-radius:1px 1px; border-bottom-right-radius:1px;">
     <f:facet name="first">
-      <af:panelGroupLayout layout="vertical" id="pgl1">
-        <af:panelHeader text="Accounts" id="ph1"
-                        inlineStyle="border-bottom-left-radius:1px 1px; border-bottom-right-radius:1px;">
-          <af:query id="qryId1" headerText="Search" disclosed="true"
-                    value="#{bindings.CustomerAccountSearchCriteriaQuery.queryDescriptor}"
-                    model="#{bindings.CustomerAccountSearchCriteriaQuery.queryModel}"
-                    queryListener="#{bindings.CustomerAccountSearchCriteriaQuery.processQuery}"
-                    queryOperationListener="#{bindings.CustomerAccountSearchCriteriaQuery.processQueryOperation}"/>
-        </af:panelHeader>
-      </af:panelGroupLayout>
+      <af:panelGroupLayout layout="vertical" id="pgl2">
+            <af:panelHeader text="Customer Accounts" id="ph2">
+              <af:query id="qryId1" headerText="Search" disclosed="true"
+                        value="#{bindings.CustomerAccountSearchCriteriaQuery.queryDescriptor}"
+                        model="#{bindings.CustomerAccountSearchCriteriaQuery.queryModel}"
+                        queryListener="#{bindings.CustomerAccountSearchCriteriaQuery.processQuery}"
+                        queryOperationListener="#{bindings.CustomerAccountSearchCriteriaQuery.processQueryOperation}"/>
+            </af:panelHeader>
+          </af:panelGroupLayout>
     </f:facet>
     <f:facet name="second">      
       <af:panelCollection id="pc1">
@@ -33,7 +32,7 @@
                   emptyText="#{bindings.CustomerAccount12.viewable ? 'No data to display.' : 'Access Denied.'}"
                   rowBandingInterval="0" selectedRowKeys="#{bindings.CustomerAccount12.collectionModel.selectedRow}"
                   selectionListener="#{bindings.CustomerAccount12.collectionModel.makeCurrent}" rowSelection="single"
-                  fetchSize="#{bindings.CustomerAccount12.rangeSize}" id="t1" columnStretching="column:c1"
+                  fetchSize="#{bindings.CustomerAccount12.rangeSize}" id="t1" columnStretching="last"
                   partialTriggers="::b3 ::b1 l1">
           <af:column sortProperty="#{bindings.CustomerAccount12.hints.AccountName.name}" sortable="true"
                      headerText="#{bindings.CustomerAccount12.hints.AccountName.label}" id="c1">

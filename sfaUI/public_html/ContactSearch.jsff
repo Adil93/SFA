@@ -4,12 +4,12 @@
   <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="186">
     <f:facet name="first">
       <af:panelGroupLayout layout="vertical" id="pgl1">
-        <af:panelHeader text="Contacts" id="ph1">
+        <af:panelHeader text="Customer Contacts" id="ph1">
           <af:query id="qryId1" headerText="Search" disclosed="true"
-                    value="#{bindings.CustomerSearchCreteriaQuery.queryDescriptor}"
-                    model="#{bindings.CustomerSearchCreteriaQuery.queryModel}"
-                    queryListener="#{bindings.CustomerSearchCreteriaQuery.processQuery}"
-                    queryOperationListener="#{bindings.CustomerSearchCreteriaQuery.processQueryOperation}" rows="5"/>
+                    value="#{bindings.CustomerSearchCreteriaQuery1.queryDescriptor}"
+                    model="#{bindings.CustomerSearchCreteriaQuery1.queryModel}"
+                    queryListener="#{bindings.CustomerSearchCreteriaQuery1.processQuery}"
+                    queryOperationListener="#{bindings.CustomerSearchCreteriaQuery1.processQueryOperation}"/>
         </af:panelHeader>
       </af:panelGroupLayout>
     </f:facet>

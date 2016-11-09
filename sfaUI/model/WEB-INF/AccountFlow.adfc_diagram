@@ -48,7 +48,7 @@
       <property
          name="fromOutcome">editAccount</property>
       <property
-         name="sdm:polyPoints">R46,476.1967,129.79883,905.3033,131.04785,L46</property>
+         name="sdm:polyPoints">R46,476.1967,129.51465,905.3033,130.76367,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -58,7 +58,7 @@
       <property
          name="fromOutcome">createAccount</property>
       <property
-         name="sdm:polyPoints">R54,476.18658,136.79883,905.29315,138.04785,L54</property>
+         name="sdm:polyPoints">R54,476.18658,136.51465,905.29315,137.76367,L54</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall8">
@@ -104,7 +104,7 @@
       <property
          name="fromOutcome">*</property>
       <property
-         name="sdm:polyPoints">L50,698.5,314.10156,475.0,143.79883,R62</property>
+         name="sdm:polyPoints">L50,698.5,313.81738,475.0,143.51465,R62</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall17">
@@ -127,7 +127,7 @@
       <property
          name="fromOutcome">submitContinue</property>
       <property
-         name="sdm:polyPoints">R46,988.7166,131.04785,1196.5,132.60156,L46</property>
+         name="sdm:polyPoints">R46,988.7166,130.76367,1196.5,132.31738,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -137,7 +137,7 @@
       <property
          name="fromOutcome">submit</property>
       <property
-         name="sdm:polyPoints">L38,906.6904,124.04785,747.5,-24.898438,R50</property>
+         name="sdm:polyPoints">L38,906.6904,123.76367,747.5,-25.182617,R50</property>
    </ControlFlowCase>
    <View
       id="View23">
@@ -164,7 +164,7 @@
       <property
          name="fromOutcome">accountDetails</property>
       <property
-         name="sdm:polyPoints">L46,392.9772,129.79883,259.58496,130.66797,R46</property>
+         name="sdm:polyPoints">L46,392.9772,129.51465,259.58496,130.38379,R46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -174,7 +174,7 @@
       <property
          name="fromOutcome">cancel</property>
       <property
-         name="sdm:polyPoints">R54,259.60776,137.66797,393.0,136.79883,L54</property>
+         name="sdm:polyPoints">R54,259.60776,137.38379,393.0,136.51465,L54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -184,7 +184,7 @@
       <property
          name="fromOutcome">delete</property>
       <property
-         name="sdm:polyPoints">R38,475.0,122.79883,665.5,-24.898438,L50</property>
+         name="sdm:polyPoints">R38,475.0,122.51465,665.5,-21.682617,L54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -194,7 +194,7 @@
       <property
          name="fromOutcome">*</property>
       <property
-         name="sdm:polyPoints">L54,1196.4739,139.60156,988.6904,138.04785,R54</property>
+         name="sdm:polyPoints">L54,1196.4739,139.31738,988.6904,137.76367,R54</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall28">
@@ -217,7 +217,7 @@
       <property
          name="fromOutcome">*</property>
       <property
-         name="sdm:polyPoints">L46,664.29144,-28.398438,474.5,-24.765625,R50</property>
+         name="sdm:polyPoints">L46,664.29144,-28.682617,474.5,-25.049805,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"

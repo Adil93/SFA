@@ -326,7 +326,7 @@ FROM  CUSTOMER_CONTACT CustomerContactEO]]></SQLQuery>
       <CustomProperties>
         <Property
           Name="autoExecute"
-          Value="false"/>
+          Value="true"/>
         <Property
           Name="mode"
           Value="Basic"/>
