@@ -69,6 +69,9 @@
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
    <value n="defaultPackage" v="sfa.view"/>
+   <hash n="oracle.adfdtinternal.model.ide.security.SecurityPolicies">
+      <value n="grantOption" v="none"/>
+   </hash>
    <hash n="oracle.adfdtinternal.view.rich.setting.ADFViewSettings">
       <value n="ENABLE_ADF_WEBAPP_LIB_SUPPORT" v="true"/>
    </hash>
@@ -111,6 +114,8 @@
          <string v="ADF_FACES"/>
          <string v="ADFc"/>
          <string v="ADFm"/>
+         <string v="HTML"/>
+         <string v="JAVASCRIPT"/>
          <string v="JSF"/>
          <string v="JSP"/>
          <string v="Java"/>
@@ -338,7 +343,45 @@
             <value n="id" v="Oracle Page Templates"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="WebLogic 12.1 API"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Weblogic.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Security"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JPS Designtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
+      <hash n="internalDefinitions">
+         <list n="libraryDefinitions">
+            <hash>
+               <list n="classPath">
+                  <url path="../../../../Oracle/Middleware/Oracle_Home/wlserver/modules/com.bea.core.weblogic.security.auth.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Com.bea.core.weblogic.security.auth.jar"/>
+               <value n="id" v="Com.bea.core.weblogic.security.auth.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../../../../Oracle/Middleware/Oracle_Home/wlserver/server/lib/weblogic.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Weblogic.jar"/>
+               <value n="id" v="Weblogic.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+         </list>
+      </hash>
       <list n="libraryReferences">
          <hash>
             <value n="id" v="JSP Runtime"/>
@@ -458,6 +501,26 @@
          </hash>
          <hash>
             <value n="id" v="Oracle Page Templates"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="WebLogic 12.1 API"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Com.bea.core.weblogic.security.auth.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Weblogic.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Security"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="JPS Designtime"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

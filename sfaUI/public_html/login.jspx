@@ -21,9 +21,11 @@
                             <f:facet name="toolbar"/>
                             <af:panelFormLayout id="pfl1">
                                 <f:facet name="footer"/>
-                                <af:inputText label="Username" id="usernameTextField" maximumLength="50"/>
-                                <af:inputText label="Password" id="passwordTextField" maximumLength="50"/>
-                            <af:button text="Login" id="b1"/>
+                                <af:inputText label="Username" id="usernameTextField" maximumLength="50"
+                                              value="#{loginBean.username}"/>
+                                <af:inputText label="Password" id="passwordTextField" maximumLength="50"
+                                              value="#{loginBean.password}" secret="true"/>
+                            <af:button text="Login" id="b1" action="#{loginBean.doLogin}"/>
                             </af:panelFormLayout>
                         </af:panelBox>
                     </f:facet>
