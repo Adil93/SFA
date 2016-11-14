@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top"/>
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+    <af:panelBox text="Product" id="pb1">
+      <af:panelFormLayout id="pfl1">
+        <af:inputText value="#{bindings.ProductCode.inputValue}" label="#{bindings.ProductCode.hints.label}"
+                      required="#{bindings.ProductCode.hints.mandatory}"
+                      columns="#{bindings.ProductCode.hints.displayWidth}"
+                      maximumLength="#{bindings.ProductCode.hints.precision}"
+                      shortDesc="#{bindings.ProductCode.hints.tooltip}" id="it1">
+          <f:validator binding="#{bindings.ProductCode.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.ProductName.inputValue}" label="#{bindings.ProductName.hints.label}"
+                      required="#{bindings.ProductName.hints.mandatory}"
+                      columns="#{bindings.ProductName.hints.displayWidth}"
+                      maximumLength="#{bindings.ProductName.hints.precision}"
+                      shortDesc="#{bindings.ProductName.hints.tooltip}" id="it2">
+          <f:validator binding="#{bindings.ProductName.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.CurrentPrice.inputValue}" label="#{bindings.CurrentPrice.hints.label}"
+                      required="#{bindings.CurrentPrice.hints.mandatory}"
+                      columns="#{bindings.CurrentPrice.hints.displayWidth}"
+                      maximumLength="#{bindings.CurrentPrice.hints.precision}"
+                      shortDesc="#{bindings.CurrentPrice.hints.tooltip}" id="it3">
+          <f:validator binding="#{bindings.CurrentPrice.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.CurrentPrice.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.Category.inputValue}" label="#{bindings.Category.hints.label}"
+                      required="#{bindings.Category.hints.mandatory}" columns="#{bindings.Category.hints.displayWidth}"
+                      maximumLength="#{bindings.Category.hints.precision}"
+                      shortDesc="#{bindings.Category.hints.tooltip}" id="it4">
+          <f:validator binding="#{bindings.Category.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.Description.inputValue}" label="#{bindings.Description.hints.label}"
+                      required="#{bindings.Description.hints.mandatory}"
+                      columns="#{bindings.Description.hints.displayWidth}"
+                      maximumLength="#{bindings.Description.hints.precision}"
+                      shortDesc="#{bindings.Description.hints.tooltip}" id="it5">
+          <f:validator binding="#{bindings.Description.validator}"/>
+        </af:inputText>
+        <af:separator id="s1"/>
+        <af:panelGroupLayout id="pgl1" inlineStyle="height:50px;">
+            <af:button text="Save and Close" id="b1" action="submit"/>
+          <af:spacer width="10" height="10" id="s2"/>
+       <af:button text="Save and Continue" id="b2" action="submitContinue"/>
+          <af:spacer width="10" height="10" id="s3"/>
+        <af:button text="Cancel" id="b3" action="cancel" immediate="true"/>
+            
+        </af:panelGroupLayout>
+        
+        <f:facet name="footer">
+        
+        </f:facet>
+      </af:panelFormLayout>
+      </af:panelBox>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="ProductSearchPageDef"
+                Package="sfa.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Product1" RangeSize="25" DataControl="AppModuleAMDataControl" id="Product1Iterator"/>
+    <searchRegion Criteria="ProductVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="Product1Iterator" id="ProductVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Product1Iterator" id="Product1">
+      <nodeDefinition DefName="sfa.model.uiview.ProductVO" Name="Product10">
+        <AttrNames>
+          <Item Value="ProductCode"/>
+          <Item Value="ProductName"/>
+          <Item Value="Description"/>
+          <Item Value="CurrentPrice"/>
+          <Item Value="Category"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="Product1Iterator" id="setCurrentRowWithKeyValue" RequiresUpdateModel="false"
+            Action="setCurrentRowWithKeyValue">
+      <NamedData NDName="rowKey" NDType="java.lang.String" NDValue="#{row.ProductId}"/>
+    </action>
+  </bindings>
+</pageDefinition>

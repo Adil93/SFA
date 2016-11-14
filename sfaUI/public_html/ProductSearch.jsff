@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="186">
+    <f:facet name="first">
+      <af:panelGroupLayout layout="vertical" id="pgl1">
+        <af:panelHeader text="Products" id="ph1">
+          <af:query id="qryId1" headerText="Search" disclosed="true"
+                    value="#{bindings.ProductVOCriteriaQuery.queryDescriptor}"
+                    model="#{bindings.ProductVOCriteriaQuery.queryModel}"
+                    queryListener="#{bindings.ProductVOCriteriaQuery.processQuery}"
+                    queryOperationListener="#{bindings.ProductVOCriteriaQuery.processQueryOperation}"/>
+        </af:panelHeader>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="second">
+      <af:panelCollection id="pc1">
+        <f:facet name="menus"/>
+        <f:facet name="toolbar">
+             <af:toolbar id="t2">
+            <af:button icon="#{resource['images:Create.png']}" id="b1" action="productCreate" shortDesc="create"/>
+            <af:button id="b2" action="productEdit" icon="#{resource['images:EditDocument.png']}" shortDesc="edit"/>
+             <af:button id="b3" icon="#{resource['images:remove.png']}" action="delete" immediate="true" shortDesc="delete"/>
+        </af:toolbar>
+        </f:facet>
+        <f:facet name="statusbar"/>
+        <af:table value="#{bindings.Product1.collectionModel}" var="row" rows="#{bindings.Product1.rangeSize}"
+                  emptyText="#{bindings.Product1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  rowBandingInterval="0" selectedRowKeys="#{bindings.Product1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.Product1.collectionModel.makeCurrent}" rowSelection="single"
+                  fetchSize="#{bindings.Product1.rangeSize}" id="t1" columnStretching="last" partialTriggers="l1">
+          <af:column sortProperty="#{bindings.Product1.hints.ProductCode.name}" sortable="true"
+                     headerText="#{bindings.Product1.hints.ProductCode.label}" id="c1">
+            <af:outputText value="#{row.ProductCode}" shortDesc="#{bindings.Product1.hints.ProductCode.tooltip}"
+                           id="ot1"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.Product1.hints.ProductName.name}" sortable="true"
+                     headerText="#{bindings.Product1.hints.ProductName.label}" id="c2">
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue.execute}" text="#{row.ProductName}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue.enabled}" id="l1" action="productDetails"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.Product1.hints.Description.name}" sortable="true"
+                     headerText="#{bindings.Product1.hints.Description.label}" id="c3">
+            <af:outputText value="#{row.Description}" shortDesc="#{bindings.Product1.hints.Description.tooltip}"
+                           id="ot3"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.Product1.hints.CurrentPrice.name}" sortable="true"
+                     headerText="#{bindings.Product1.hints.CurrentPrice.label}" id="c4">
+            <af:outputText value="#{row.CurrentPrice}" shortDesc="#{bindings.Product1.hints.CurrentPrice.tooltip}"
+                           id="ot4">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.Product1.hints.CurrentPrice.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.Product1.hints.Category.name}" sortable="true"
+                     headerText="#{bindings.Product1.hints.Category.label}" id="c5">
+            <af:outputText value="#{row.Category}" shortDesc="#{bindings.Product1.hints.Category.tooltip}" id="ot5"/>
+          </af:column>
+        </af:table>
+      </af:panelCollection>
+    </f:facet>
+  </af:panelSplitter>
+</jsp:root>

@@ -1,5 +1,7 @@
 package sfa.view;
 
+import java.io.IOException;
+
 import javax.faces.context.FacesContext;
 import javax.faces.context.ExternalContext;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +21,7 @@ public class LoginBean {
     
     private String username;
     private String password;
+    private String errorMsg;
 
     public void setUsername(String username) {
         this.username = username;
@@ -34,6 +37,14 @@ public class LoginBean {
 
     public String getPassword() {
         return password;
+    }
+    
+    public void  setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
+    
+    public String  getErrorMsg() {
+        return errorMsg;
     }
     
     public String doLogin() {
@@ -57,8 +68,27 @@ public class LoginBean {
             
         } catch(Exception e) {
             e.printStackTrace();
+            this.setErrorMsg("Incorrect username/password. Please try to re-login.");
+            request.setAttribute("errorMsg", this.errorMsg);
+            try {
+                externalContext.redirect("login.jspx");
+            } catch (IOException f) {
+                e.printStackTrace();
+            }
         }
         
         return  null; 
     }
+    
+    public String doLogout(){
+            FacesContext facesContext = FacesContext.getCurrentInstance();
+            ExternalContext externalContext = facesContext.getExternalContext();
+        try {
+            externalContext.redirect("adfAuthentication?logout=true&end_url=/faces/login.jspx");
+            //facesContext.responseComplete();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+        }
 }

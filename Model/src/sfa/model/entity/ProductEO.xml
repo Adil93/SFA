@@ -20,7 +20,12 @@
     Type="java.math.BigInteger"
     ColumnType="NUMBER"
     TableName="PRODUCT"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <TransientExpression
+      Name="ExpressionScript"
+      CodeSourceName="ProductEORow">
+      </TransientExpression>
+  </Attribute>
   <Attribute
     Name="ProductCode"
     Precision="30"

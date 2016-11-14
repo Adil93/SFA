@@ -1,0 +1,12 @@
+//Groovy Scripts for sfa.model.entity.ProductEO
+
+package sfa.model.entity
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="ProductId")
+def ProductId_ExpressionScript_Expression()
+{
+(new oracle.jbo.server.SequenceImpl("PRODUCT_SEQ",adf.object.getDBTransaction())).getSequenceNumber()
+}
+

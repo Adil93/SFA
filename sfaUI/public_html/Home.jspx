@@ -31,6 +31,12 @@
                                                         to="#{viewScope.DynamicRegionBean.currentTF}"
                                                         type="action"/>
                                 </af:link>
+                                <af:link text="Products" id="l5" partialSubmit="true" partialTriggers="l1"
+                                     inlineStyle="font-size:13px;" icon="#{resource['images:products.png']}">
+                                <af:setPropertyListener from="product"
+                                                        to="#{viewScope.DynamicRegionBean.currentTF}"
+                                                        type="action"/>
+                                </af:link>
                                 
                         </af:panelList>
                         </af:panelBox>
@@ -41,8 +47,14 @@
                     <f:facet name="globalToolbar"/>
                     <f:facet name="globalSearch"/>
                     <f:facet name="globalTabs">
-                        <af:link text="Logout" id="l4" inlineStyle="color:White; float:right; font-size:13px;vertical-align: top;"
+                        <!-- <af:panelGroupLayout id="pgl1"  inlineStyle="float:right; background-color: Blue; "
+                                             styleClass="AFStretchWidth">
+                            <af:link text="Logout" id="l4" inlineStyle="color:Silver; float:right; font-size:13px;vertical-align: top;"
                             destination="#{'adfAuthentication?logout=true&amp;end_url=/faces/login.jspx'}"/>
+                        </af:panelGroupLayout>-->
+                        <h:commandLink value="Logout" id="cl1" style="color:White; float:right; font-size:13px;vertical-align: top" action="#{loginBean.doLogout}">
+                        
+                        </h:commandLink>
                     </f:facet>
                     <f:facet name="welcome">
                         <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1" partialTriggers="::l1"/>

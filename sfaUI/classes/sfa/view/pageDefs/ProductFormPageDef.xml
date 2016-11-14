@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="ProductFormPageDef"
+                Package="sfa.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Product1" RangeSize="25" DataControl="AppModuleAMDataControl" id="Product1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="Product1Iterator" id="ProductCode">
+      <AttrNames>
+        <Item Value="ProductCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Product1Iterator" id="ProductName">
+      <AttrNames>
+        <Item Value="ProductName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Product1Iterator" id="CurrentPrice">
+      <AttrNames>
+        <Item Value="CurrentPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Product1Iterator" id="Category">
+      <AttrNames>
+        <Item Value="Category"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Product1Iterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

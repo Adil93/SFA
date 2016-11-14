@@ -3,5 +3,6 @@
    <task-flow-descriptor path="META-INF/adfc-config.xml" id="" type="" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
    <task-flow-descriptor path="WEB-INF/AccountFlow.xml" id="AccountFlow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
    <task-flow-descriptor path="WEB-INF/ContactFlow.xml" id="ContactFlow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/ProductFlow.xml" id="ProductFlow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
    <task-flow-descriptor path="WEB-INF/WelcomePageFlow.xml" id="WelcomePageFlow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
 </task-flow-registry>

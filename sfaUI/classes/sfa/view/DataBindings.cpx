@@ -30,6 +30,21 @@
           usageId="sfa_view_AccountFlow_AccountFlow_ExecutePageDef"/>
     <page path="/welcome.jsff" usageId="sfa_view_welcomePageDef"/>
     <page path="/login.jspx" usageId="sfa_view_loginPageDef"/>
+    <page path="/ProductSearch.jsff" usageId="sfa_view_ProductSearchPageDef"/>
+    <page path="/ProductForm.jsff" usageId="sfa_view_ProductFormPageDef"/>
+    <page path="/ProductDetails.jsff" usageId="sfa_view_ProductDetailsPageDef"/>
+    <page path="/WEB-INF/ProductFlow.xml#ProductFlow@CreateInsert"
+          usageId="sfa_view_ProductFlow_ProductFlow_CreateInsertPageDef"/>
+    <page path="/WEB-INF/ProductFlow.xml#ProductFlow@Commit" usageId="sfa_view_ProductFlow_ProductFlow_CommitPageDef"/>
+    <page path="/WEB-INF/ProductFlow.xml#ProductFlow@Execute"
+          usageId="sfa_view_ProductFlow_ProductFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/ProductFlow.xml#ProductFlow@Commit1"
+          usageId="sfa_view_ProductFlow_ProductFlow_Commit1PageDef"/>
+    <page path="/WEB-INF/ProductFlow.xml#ProductFlow@CreateInsert1"
+          usageId="sfa_view_ProductFlow_ProductFlow_CreateInsert1PageDef"/>
+    <page path="/WEB-INF/ProductFlow.xml#ProductFlow@Delete" usageId="sfa_view_ProductFlow_ProductFlow_DeletePageDef"/>
+    <page path="/WEB-INF/ProductFlow.xml#ProductFlow@Rollback"
+          usageId="sfa_view_ProductFlow_ProductFlow_RollbackPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="sfa_view_ContactSearchPageDef" path="sfa.view.pageDefs.ContactSearchPageDef"/>
@@ -57,6 +72,23 @@
           path="sfa.view.pageDefs.AccountFlow_AccountFlow_ExecutePageDef"/>
     <page id="sfa_view_welcomePageDef" path="sfa.view.pageDefs.welcomePageDef"/>
     <page id="sfa_view_loginPageDef" path="sfa.view.pageDefs.loginPageDef"/>
+    <page id="sfa_view_ProductSearchPageDef" path="sfa.view.pageDefs.ProductSearchPageDef"/>
+    <page id="sfa_view_ProductFormPageDef" path="sfa.view.pageDefs.ProductFormPageDef"/>
+    <page id="sfa_view_ProductDetailsPageDef" path="sfa.view.pageDefs.ProductDetailsPageDef"/>
+    <page id="sfa_view_ProductFlow_ProductFlow_CreateInsertPageDef"
+          path="sfa.view.pageDefs.ProductFlow_ProductFlow_CreateInsertPageDef"/>
+    <page id="sfa_view_ProductFlow_ProductFlow_CommitPageDef"
+          path="sfa.view.pageDefs.ProductFlow_ProductFlow_CommitPageDef"/>
+    <page id="sfa_view_ProductFlow_ProductFlow_ExecutePageDef"
+          path="sfa.view.pageDefs.ProductFlow_ProductFlow_ExecutePageDef"/>
+    <page id="sfa_view_ProductFlow_ProductFlow_Commit1PageDef"
+          path="sfa.view.pageDefs.ProductFlow_ProductFlow_Commit1PageDef"/>
+    <page id="sfa_view_ProductFlow_ProductFlow_CreateInsert1PageDef"
+          path="sfa.view.pageDefs.ProductFlow_ProductFlow_CreateInsert1PageDef"/>
+    <page id="sfa_view_ProductFlow_ProductFlow_DeletePageDef"
+          path="sfa.view.pageDefs.ProductFlow_ProductFlow_DeletePageDef"/>
+    <page id="sfa_view_ProductFlow_ProductFlow_RollbackPageDef"
+          path="sfa.view.pageDefs.ProductFlow_ProductFlow_RollbackPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleAMDataControl" Package="sfa.model.uiview"

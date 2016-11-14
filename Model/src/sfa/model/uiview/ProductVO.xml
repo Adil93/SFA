@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="productNameVar"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="ProductEO"
     Entity="sfa.model.entity.ProductEO"/>
@@ -77,6 +81,42 @@
     EntityAttrName="ModifiedBy"
     EntityUsage="ProductEO"
     AliasName="MODIFIED_BY"/>
+  <ViewCriteria
+    Name="ProductVOCriteria"
+    ViewObjectName="sfa.model.uiview.ProductVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="ProductVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="ProductVOCriteria_ProductVOCriteria_row_0_ProductName"
+        ViewAttribute="ProductName"
+        Operator="STARTSWITH"
+        Conjunction="AND"
+        Value=":productNameVar"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="Revenueitem"
     ViewLink="sfa.model.uiview.SysC007433Link"
