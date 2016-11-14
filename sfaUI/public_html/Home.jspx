@@ -7,7 +7,7 @@
             <af:form id="f1">
                 <af:pageTemplate viewId="/oracle/ui/pattern/dynamicShell/dynamicTabShell.jspx" id="pt1">
                     <f:facet name="copyright">
-                        <af:outputText value="@Copyright Reserved" id="ot1"/>
+                        <af:outputText value="Copyright(c) Reserved" id="ot1"/>
                     </f:facet>
                     <f:facet name="navigation">
                         <af:panelBox text="Menu" id="pb1">
@@ -52,9 +52,10 @@
                             <af:link text="Logout" id="l4" inlineStyle="color:Silver; float:right; font-size:13px;vertical-align: top;"
                             destination="#{'adfAuthentication?logout=true&amp;end_url=/faces/login.jspx'}"/>
                         </af:panelGroupLayout>-->
-                        <h:commandLink value="Logout" id="cl1" style="color:White; float:right; font-size:13px;vertical-align: top" action="#{loginBean.doLogout}">
+                        <h:commandLink value="Logout" id="cl1" style="color:White; float:right; font-size:13px;vertical-align: top;" action="#{loginBean.doLogout}"
+                            styleClass="text-decoration: none;"/>
                         
-                        </h:commandLink>
+                        
                     </f:facet>
                     <f:facet name="welcome">
                         <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1" partialTriggers="::l1"/>

@@ -3,7 +3,7 @@
           xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:h="http://java.sun.com/jsf/html">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <f:view>
-        <af:document title="untitled1.jspx" id="d1">
+        <af:document title="Login Page" id="d1">
             <af:form id="f1">
                 <af:panelGridLayout id="pgl1">
                     <af:gridRow height="50px" id="gr2">
@@ -13,7 +13,7 @@
                                 <af:image source="#{resource['images:oracle_logo.png']}" shortDesc="Oracle Logo"
                                           id="i1"/>
                             <af:outputText value="Sales Force Automation" id="ot1"
-                                           inlineStyle="font-size:large; color:Teal; margin:0px 10px 0px; padding:0px 0px 0px 10px;"/>
+                                           inlineStyle="font-size:large; color:#D4988; margin:0px 10px 0px; padding:0px 0px 0px 10px;"/>
                             </af:panelGroupLayout>
                         </af:gridCell>
                     </af:gridRow>
@@ -26,22 +26,28 @@
               <f:facet name="center">
                 <af:panelGroupLayout id="pgl4" layout="vertical"
                                      halign="center">
+                                    <af:subform id="ss3" defaultCommand="b1">
                   <af:panelFormLayout id="pflLogin" rows="2" maxColumns="1" >
-                    
-                       <af:inputText label="Username" id="usernameTextField" maximumLength="50"
-                                              value="#{loginBean.username}" dimensionsFrom="auto"
-                                              inlineStyle="text-height:font-size; vertical-align:middle; font-size:larger; line-height:25px;"
-                                              required="true"/>
+                                            <?audit suppress oracle.ide.xml.wellformedness-error?>
+                                            <af:inputText label="Username" id="usernameTextField" maximumLength="50"
+                                                 value="#{loginBean.username}" required="true"
+                                                 inlineStyle="text-height:font-size; vertical-align:middle; font-size:larger; line-height:25px;"
+                                                 contentStyle="width:240px;height: 30px;" labelStyle="font-size:larger;font-weight:bold;" autoSubmit="true"/>
+
                                     <af:inputText label="Password" id="passwordTextField" maximumLength="50"
                                                   value="#{loginBean.password}" secret="true" required="true"
-                                                  inlineStyle="text-height:font-size; vertical-align:middle; font-size:large; line-height:25px;"/>
+                                                  inlineStyle="text-height:font-size; vertical-align:middle; font-size:larger; line-height:25px;"
+                                                  contentStyle="width:240px;height: 30px;" labelStyle="font-size:larger;font-weight:bold;"/>
 
+                        
+                        
 
                     <af:spacer width="10" height="10" id="s1"/>
                     <af:button text="Login" id="b1" action="#{loginBean.doLogin}"/>
-                                       
+                                  
                                         <h:commandLink value="Forgot Password?" id="cl1" style="font-size:small;"/>
                   </af:panelFormLayout>
+                  </af:subform>
                 </af:panelGroupLayout>
               </f:facet>
               <f:facet name="bottom">
@@ -55,7 +61,7 @@
                     </af:gridRow>
                     <af:gridRow height="50px" id="gr1">
                         <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc3">
-                            <!-- Footer -->
+                            <af:outputText value="Copyright(c) Reserved" id="ot2"/>
                         </af:gridCell>
                     </af:gridRow>
                 </af:panelGridLayout>

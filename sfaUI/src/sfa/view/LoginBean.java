@@ -2,6 +2,7 @@ package sfa.view;
 
 import java.io.IOException;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ExternalContext;
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +12,8 @@ import javax.servlet.RequestDispatcher;
 import javax.security.auth.Subject;
 
 import javax.servlet.http.HttpSession;
+
+import oracle.adf.share.ADFContext;
 
 import weblogic.security.SimpleCallbackHandler;
 import weblogic.security.services.Authentication;
@@ -70,15 +73,27 @@ public class LoginBean {
             e.printStackTrace();
             this.setErrorMsg("Incorrect username/password. Please try to re-login.");
             request.setAttribute("errorMsg", this.errorMsg);
+            facesContext.addMessage("ss3", new FacesMessage("Username or password is incorrect"));
+                    
             try {
-                externalContext.redirect("login.jspx");
+                externalContext.redirect("adfAuthentication?logout=true&end_url=/faces/login.jspx");
+                facesContext.addMessage("ss3", new FacesMessage("Username or password is incorrect"));
             } catch (IOException f) {
                 e.printStackTrace();
             }
         }
+            if (!ADFContext.getCurrent().getSecurityContext().isAuthenticated()){
+                return "success";
+                }
+            else
+            {
+                    facesContext.addMessage("ss3", new FacesMessage("Username or password is incorrect"));
+                }
+            return null;
+        }
         
-        return  null; 
-    }
+       // return  null; 
+    
     
     public String doLogout(){
             FacesContext facesContext = FacesContext.getCurrentInstance();
