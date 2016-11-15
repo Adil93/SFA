@@ -45,6 +45,23 @@
     <page path="/WEB-INF/ProductFlow.xml#ProductFlow@Delete" usageId="sfa_view_ProductFlow_ProductFlow_DeletePageDef"/>
     <page path="/WEB-INF/ProductFlow.xml#ProductFlow@Rollback"
           usageId="sfa_view_ProductFlow_ProductFlow_RollbackPageDef"/>
+    <page path="/OpportunitySearch.jsff" usageId="sfa_view_OpportunitySearchPageDef"/>
+    <page path="/OpportunityForm.jsff" usageId="sfa_view_OpportunityFormPageDef"/>
+    <page path="/OpportunityDetails.jsff" usageId="sfa_view_OpportunityDetailsPageDef"/>
+    <page path="/WEB-INF/OpportunityFlow.xml#OpportunityFlow@CreateInsert"
+          usageId="sfa_view_OpportunityFlow_OpportunityFlow_CreateInsertPageDef"/>
+    <page path="/WEB-INF/OpportunityFlow.xml#OpportunityFlow@Rollback"
+          usageId="sfa_view_OpportunityFlow_OpportunityFlow_RollbackPageDef"/>
+    <page path="/WEB-INF/OpportunityFlow.xml#OpportunityFlow@Commit"
+          usageId="sfa_view_OpportunityFlow_OpportunityFlow_CommitPageDef"/>
+    <page path="/WEB-INF/OpportunityFlow.xml#OpportunityFlow@Execute"
+          usageId="sfa_view_OpportunityFlow_OpportunityFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/OpportunityFlow.xml#OpportunityFlow@CreateInsert1"
+          usageId="sfa_view_OpportunityFlow_OpportunityFlow_CreateInsert1PageDef"/>
+    <page path="/WEB-INF/OpportunityFlow.xml#OpportunityFlow@Commit1"
+          usageId="sfa_view_OpportunityFlow_OpportunityFlow_Commit1PageDef"/>
+    <page path="/WEB-INF/OpportunityFlow.xml#OpportunityFlow@Delete"
+          usageId="sfa_view_OpportunityFlow_OpportunityFlow_DeletePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="sfa_view_ContactSearchPageDef" path="sfa.view.pageDefs.ContactSearchPageDef"/>
@@ -89,6 +106,23 @@
           path="sfa.view.pageDefs.ProductFlow_ProductFlow_DeletePageDef"/>
     <page id="sfa_view_ProductFlow_ProductFlow_RollbackPageDef"
           path="sfa.view.pageDefs.ProductFlow_ProductFlow_RollbackPageDef"/>
+    <page id="sfa_view_OpportunitySearchPageDef" path="sfa.view.pageDefs.OpportunitySearchPageDef"/>
+    <page id="sfa_view_OpportunityFormPageDef" path="sfa.view.pageDefs.OpportunityFormPageDef"/>
+    <page id="sfa_view_OpportunityDetailsPageDef" path="sfa.view.pageDefs.OpportunityDetailsPageDef"/>
+    <page id="sfa_view_OpportunityFlow_OpportunityFlow_CreateInsertPageDef"
+          path="sfa.view.pageDefs.OpportunityFlow_OpportunityFlow_CreateInsertPageDef"/>
+    <page id="sfa_view_OpportunityFlow_OpportunityFlow_RollbackPageDef"
+          path="sfa.view.pageDefs.OpportunityFlow_OpportunityFlow_RollbackPageDef"/>
+    <page id="sfa_view_OpportunityFlow_OpportunityFlow_CommitPageDef"
+          path="sfa.view.pageDefs.OpportunityFlow_OpportunityFlow_CommitPageDef"/>
+    <page id="sfa_view_OpportunityFlow_OpportunityFlow_ExecutePageDef"
+          path="sfa.view.pageDefs.OpportunityFlow_OpportunityFlow_ExecutePageDef"/>
+    <page id="sfa_view_OpportunityFlow_OpportunityFlow_CreateInsert1PageDef"
+          path="sfa.view.pageDefs.OpportunityFlow_OpportunityFlow_CreateInsert1PageDef"/>
+    <page id="sfa_view_OpportunityFlow_OpportunityFlow_Commit1PageDef"
+          path="sfa.view.pageDefs.OpportunityFlow_OpportunityFlow_Commit1PageDef"/>
+    <page id="sfa_view_OpportunityFlow_OpportunityFlow_DeletePageDef"
+          path="sfa.view.pageDefs.OpportunityFlow_OpportunityFlow_DeletePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleAMDataControl" Package="sfa.model.uiview"

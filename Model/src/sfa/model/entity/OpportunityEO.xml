@@ -20,7 +20,11 @@
     Type="java.math.BigInteger"
     ColumnType="NUMBER"
     TableName="OPPORTUNITY"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <TransientExpression
+      Name="ExpressionScript"
+      CodeSourceName="OpportunityEORow"/>
+  </Attribute>
   <Attribute
     Name="CloseDate"
     ColumnName="CLOSE_DATE"
@@ -193,7 +197,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="OPPORTUNITY"/>
+    TableName="OPPORTUNITY"
+    IsNotNull="true"/>
   <AccessorAttribute
     Name="Interaction"
     Association="sfa.model.entity.SysC007420Assoc"
@@ -243,6 +248,18 @@
     AssociationOtherEnd="sfa.model.entity.SysC007414Assoc.Opportunity1"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <Key
+    Name="OpportunityOpportunityNameCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"OPPORTUNITY_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="OPPORTUNITY_OPPORTUNITY_NAME_C"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.OpportunityEO.OpportunityName"/>
+    </AttrArray>
+  </Key>
   <Key
     Name="SysC007416"
     PrimaryKey="true">

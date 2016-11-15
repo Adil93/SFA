@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="186">
+    <f:facet name="first">
+      <af:panelGroupLayout layout="vertical" id="pgl1">
+        <af:panelHeader text="Opportunity" id="ph1">
+          <af:query id="qryId1" headerText="Search" disclosed="true"
+                    value="#{bindings.OpportunityVOCriteriaQuery.queryDescriptor}"
+                    model="#{bindings.OpportunityVOCriteriaQuery.queryModel}"
+                    queryListener="#{bindings.OpportunityVOCriteriaQuery.processQuery}"
+                    queryOperationListener="#{bindings.OpportunityVOCriteriaQuery.processQueryOperation}"/>
+        </af:panelHeader>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="second">
+      <af:panelCollection id="pc1">
+        <f:facet name="menus"/>
+        <f:facet name="toolbar">
+             <af:toolbar id="t2">
+            <af:button icon="#{resource['images:Create.png']}" id="b1" action="opportunityCreate" shortDesc="create"/>
+            <af:button id="b2" action="opportunityEdit" icon="#{resource['images:EditDocument.png']}" shortDesc="edit"/>
+             <af:button id="b3" icon="#{resource['images:remove.png']}" action="delete" immediate="true" shortDesc="delete"/>
+        </af:toolbar>
+        </f:facet>
+        <f:facet name="statusbar"/>
+        <af:table value="#{bindings.Opportunity1.collectionModel}" var="row" rows="#{bindings.Opportunity1.rangeSize}"
+                  emptyText="#{bindings.Opportunity1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  rowBandingInterval="0" selectedRowKeys="#{bindings.Opportunity1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.Opportunity1.collectionModel.makeCurrent}" rowSelection="single"
+                  fetchSize="#{bindings.Opportunity1.rangeSize}" id="t1" columnStretching="last" partialTriggers="l1">
+          <af:column sortProperty="#{bindings.Opportunity1.hints.OpportunityName.name}" sortable="true"
+                     headerText="#{bindings.Opportunity1.hints.OpportunityName.label}" id="c1">
+            <af:link actionListener="#{bindings.setCurrentRowWithKeyValue.execute}" text="#{row.OpportunityName}"
+                     disabled="#{!bindings.setCurrentRowWithKeyValue.enabled}" id="l1"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.Opportunity1.hints.CloseDate.name}" sortable="true"
+                     headerText="#{bindings.Opportunity1.hints.CloseDate.label}" id="c2">
+            <af:outputText value="#{row.CloseDate}" shortDesc="#{bindings.Opportunity1.hints.CloseDate.tooltip}"
+                           id="ot2">
+              <af:convertDateTime pattern="#{bindings.Opportunity1.hints.CloseDate.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.Opportunity1.hints.PrimaryContactId.name}" sortable="true"
+                     headerText="#{bindings.Opportunity1.hints.PrimaryContactId.label}" id="c3">
+            <af:selectOneChoice value="#{row.bindings.PrimaryContactId.inputValue}"
+                                label="#{row.bindings.PrimaryContactId.label}"
+                                required="#{bindings.Opportunity1.hints.PrimaryContactId.mandatory}"
+                                shortDesc="#{bindings.Opportunity1.hints.PrimaryContactId.tooltip}" readOnly="true"
+                                id="soc1">
+              <f:selectItems value="#{row.bindings.PrimaryContactId.items}" id="si1"/>
+              <f:validator binding="#{row.bindings.PrimaryContactId.validator}"/>
+            </af:selectOneChoice>
+          </af:column>
+          <af:column sortProperty="#{bindings.Opportunity1.hints.SalesStage.name}" sortable="true"
+                     headerText="#{bindings.Opportunity1.hints.SalesStage.label}" id="c4">
+            <af:outputText value="#{row.SalesStage}" shortDesc="#{bindings.Opportunity1.hints.SalesStage.tooltip}"
+                           id="ot3"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.Opportunity1.hints.SalesMethod.name}" sortable="true"
+                     headerText="#{bindings.Opportunity1.hints.SalesMethod.label}" id="c5">
+            <af:outputText value="#{row.SalesMethod}" shortDesc="#{bindings.Opportunity1.hints.SalesMethod.tooltip}"
+                           id="ot4"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.Opportunity1.hints.SalesChannel.name}" sortable="true"
+                     headerText="#{bindings.Opportunity1.hints.SalesChannel.label}" id="c6">
+            <af:outputText value="#{row.SalesChannel}" shortDesc="#{bindings.Opportunity1.hints.SalesChannel.tooltip}"
+                           id="ot5"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.Opportunity1.hints.Revenue.name}" sortable="true"
+                     headerText="#{bindings.Opportunity1.hints.Revenue.label}" id="c7">
+            <af:outputText value="#{row.Revenue}" shortDesc="#{bindings.Opportunity1.hints.Revenue.tooltip}" id="ot6">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.Opportunity1.hints.Revenue.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.Opportunity1.hints.BestCaseRevenue.name}" sortable="true"
+                     headerText="#{bindings.Opportunity1.hints.BestCaseRevenue.label}" id="c8">
+            <af:outputText value="#{row.BestCaseRevenue}"
+                           shortDesc="#{bindings.Opportunity1.hints.BestCaseRevenue.tooltip}" id="ot7">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.Opportunity1.hints.BestCaseRevenue.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.Opportunity1.hints.WorstCaseRevenue.name}" sortable="true"
+                     headerText="#{bindings.Opportunity1.hints.WorstCaseRevenue.label}" id="c9">
+            <af:outputText value="#{row.WorstCaseRevenue}"
+                           shortDesc="#{bindings.Opportunity1.hints.WorstCaseRevenue.tooltip}" id="ot8">
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.Opportunity1.hints.WorstCaseRevenue.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.Opportunity1.hints.IsBudgeted.name}" sortable="true"
+                     headerText="#{bindings.Opportunity1.hints.IsBudgeted.label}" id="c10">
+            <af:outputText value="#{row.IsBudgeted}" shortDesc="#{bindings.Opportunity1.hints.IsBudgeted.tooltip}"
+                           id="ot9"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.Opportunity1.hints.BudgetAmountIfAvail.name}" sortable="true"
+                     headerText="#{bindings.Opportunity1.hints.BudgetAmountIfAvail.label}" id="c11">
+            <af:outputText value="#{row.BudgetAmountIfAvail}"
+                           shortDesc="#{bindings.Opportunity1.hints.BudgetAmountIfAvail.tooltip}" id="ot10">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.Opportunity1.hints.BudgetAmountIfAvail.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.Opportunity1.hints.EstimatedDurationDays.name}" sortable="true"
+                     headerText="#{bindings.Opportunity1.hints.EstimatedDurationDays.label}" id="c12">
+            <af:outputText value="#{row.EstimatedDurationDays}"
+                           shortDesc="#{bindings.Opportunity1.hints.EstimatedDurationDays.tooltip}" id="ot11">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.Opportunity1.hints.EstimatedDurationDays.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.Opportunity1.hints.RiskLevel.name}" sortable="true"
+                     headerText="#{bindings.Opportunity1.hints.RiskLevel.label}" id="c13">
+            <af:outputText value="#{row.RiskLevel}" shortDesc="#{bindings.Opportunity1.hints.RiskLevel.tooltip}"
+                           id="ot12"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.Opportunity1.hints.Description.name}" sortable="true"
+                     headerText="#{bindings.Opportunity1.hints.Description.label}" id="c14">
+            <af:outputText value="#{row.Description}" shortDesc="#{bindings.Opportunity1.hints.Description.tooltip}"
+                           id="ot13"/>
+          </af:column>
+        </af:table>
+      </af:panelCollection>
+    </f:facet>
+  </af:panelSplitter>
+</jsp:root>

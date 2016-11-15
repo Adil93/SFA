@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.20.47" id="OpportunitySearchPageDef"
+                Package="sfa.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Opportunity1" RangeSize="25" DataControl="AppModuleAMDataControl" id="Opportunity1Iterator"/>
+    <searchRegion Criteria="OpportunityVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="Opportunity1Iterator" id="OpportunityVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Opportunity1Iterator" id="Opportunity1">
+      <nodeDefinition DefName="sfa.model.uiview.OpportunityVO" Name="Opportunity10">
+        <AttrNames>
+          <Item Value="OpportunityName"/>
+          <Item Value="CloseDate"/>
+          <Item Value="PrimaryContactId"/>
+          <Item Value="SalesStage"/>
+          <Item Value="SalesMethod"/>
+          <Item Value="SalesChannel"/>
+          <Item Value="Revenue"/>
+          <Item Value="BestCaseRevenue"/>
+          <Item Value="WorstCaseRevenue"/>
+          <Item Value="IsBudgeted"/>
+          <Item Value="BudgetAmountIfAvail"/>
+          <Item Value="EstimatedDurationDays"/>
+          <Item Value="RiskLevel"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="Opportunity1Iterator" id="setCurrentRowWithKeyValue" RequiresUpdateModel="false"
+            Action="setCurrentRowWithKeyValue">
+      <NamedData NDName="rowKey" NDType="java.lang.String" NDValue="#{row.OpportunityId}"/>
+    </action>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="OpportunityFlow">
+    <default-activity>OpportunitySearch</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="OpportunitySearch">
+      <page>/OpportunitySearch.jsff</page>
+    </view>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome>
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="opportunityForm">
+      <page>/OpportunityForm.jsff</page>
+    </view>
+    <method-call id="Rollback">
+      <method>#{bindings.Rollback.execute}</method>
+      <outcome>
+        <fixed-outcome>Rollback</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="Commit">
+      <method>#{bindings.Commit.execute}</method>
+      <outcome>
+        <fixed-outcome>Commit</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="Execute">
+      <method>#{bindings.Execute.execute}</method>
+      <outcome>
+        <fixed-outcome>Execute</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="CreateInsert1">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome>
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="Commit1">
+      <method>#{bindings.Commit.execute}</method>
+      <outcome>
+        <fixed-outcome>Commit</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="opportunityDetails">
+      <page>/OpportunityDetails.jsff</page>
+    </view>
+    <method-call id="Delete">
+      <method>#{bindings.Delete.execute}</method>
+      <outcome>
+        <fixed-outcome>Delete</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>OpportunitySearch</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>opportunityCreate</from-outcome>
+        <to-activity-id>CreateInsert</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>opportunityEdit</from-outcome>
+        <to-activity-id>opportunityForm</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__20">
+        <from-outcome>opportunityDetails</from-outcome>
+        <to-activity-id>opportunityDetails</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__23">
+        <from-outcome>delete</from-outcome>
+        <to-activity-id>Delete</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>CreateInsert</from-activity-id>
+      <control-flow-case id="__4">
+        <to-activity-id>opportunityForm</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>opportunityForm</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>Rollback</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <to-activity-id>Commit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__15">
+        <from-outcome>submitContinue</from-outcome>
+        <to-activity-id>CreateInsert1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>Rollback</from-activity-id>
+      <control-flow-case id="__9">
+        <to-activity-id>OpportunitySearch</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id>Commit</from-activity-id>
+      <control-flow-case id="__12">
+        <to-activity-id>Execute</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__13">
+      <from-activity-id>Execute</from-activity-id>
+      <control-flow-case id="__14">
+        <to-activity-id>OpportunitySearch</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__16">
+      <from-activity-id>CreateInsert1</from-activity-id>
+      <control-flow-case id="__17">
+        <to-activity-id>Commit1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__18">
+      <from-activity-id>Commit1</from-activity-id>
+      <control-flow-case id="__19">
+        <to-activity-id>opportunityForm</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__21">
+      <from-activity-id>opportunityDetails</from-activity-id>
+      <control-flow-case id="__22">
+        <from-outcome>cancelOpportunity</from-outcome>
+        <to-activity-id>OpportunitySearch</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__24">
+      <from-activity-id>Delete</from-activity-id>
+      <control-flow-case id="__25">
+        <to-activity-id>Commit</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

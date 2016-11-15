@@ -12,33 +12,42 @@
                     <f:facet name="navigation">
                         <af:panelBox text="Menu" id="pb1">
                             <f:facet name="toolbar"/>
-                            <af:panelList id="pl1" inlineStyle="padding:5px 0px 0px; margin:5px 0px 0px 0px;">
+                                <af:separator id="s7" inlineStyle="height: 3px;"/>
                                 <af:link text="Home" id="l3" partialSubmit="true" partialTriggers="l3"
                                      inlineStyle="font-size:13px;" icon="#{resource['images:home.png']}">
                                 <af:setPropertyListener from="welcome"
                                                         to="#{viewScope.DynamicRegionBean.currentTF}"
                                                         type="action"/>
                                 </af:link>
+                                <af:separator id="s1"  inlineStyle="height: 3px;"/>
                                 <af:link text="Contacts" id="l1" partialSubmit="true" partialTriggers="l1"
                                      inlineStyle="font-size:13px;" icon="#{resource['images:human.png']}">
                                 <af:setPropertyListener from="contact"
                                                         to="#{viewScope.DynamicRegionBean.currentTF}"
                                                         type="action"/>
                                 </af:link>
+                                 <af:separator id="s2" inlineStyle="height: 3px;"/>
                                 <af:link text="Accounts" id="l2" partialSubmit="true" partialTriggers="l2"
                                      inlineStyle="font-size:13px;" icon="#{resource['images:account.png']}">
                                 <af:setPropertyListener from="account"
                                                         to="#{viewScope.DynamicRegionBean.currentTF}"
                                                         type="action"/>
                                 </af:link>
+                                 <af:separator id="s3" inlineStyle="height: 3px;"/>
                                 <af:link text="Products" id="l5" partialSubmit="true" partialTriggers="l1"
                                      inlineStyle="font-size:13px;" icon="#{resource['images:products.png']}">
                                 <af:setPropertyListener from="product"
                                                         to="#{viewScope.DynamicRegionBean.currentTF}"
                                                         type="action"/>
                                 </af:link>
-                                
-                        </af:panelList>
+                                 <af:separator id="s4" inlineStyle="height: 3px;"/>
+                                <af:link text="Opportunity" id="l6" partialSubmit="true" partialTriggers="l1"
+                                     inlineStyle="font-size:13px;" icon="#{resource['images:opportunity.png']}">
+                                <af:setPropertyListener from="opportunity"
+                                                        to="#{viewScope.DynamicRegionBean.currentTF}"
+                                                        type="action"/>
+                                </af:link>
+                          <af:separator id="s8" inlineStyle="height: 3px;"/>
                         </af:panelBox>
                         
                     </f:facet>

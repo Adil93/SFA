@@ -1,0 +1,12 @@
+//Groovy Scripts for sfa.model.entity.OpportunityEO
+
+package sfa.model.entity
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="OpportunityId")
+def OpportunityId_ExpressionScript_Expression()
+{
+(new oracle.jbo.server.SequenceImpl("OPPORTUNITY_SEQ",adf.object.getDBTransaction())).getSequenceNumber()
+}
+

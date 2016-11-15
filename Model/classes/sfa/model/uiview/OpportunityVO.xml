@@ -13,6 +13,33 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="opportNameVar"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <ViewAccessor
+    Name="CustomerContactVO1"
+    ViewObjectName="sfa.model.uiview.CustomerContactVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_PrimaryContactId"
+    ListVOName="CustomerContactVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PrimaryContactId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ContactId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="OpportunityEO"
     Entity="sfa.model.entity.OpportunityEO"/>
@@ -34,7 +61,15 @@
     PrecisionRule="true"
     EntityAttrName="PrimaryContactId"
     EntityUsage="OpportunityEO"
-    AliasName="PRIMARY_CONTACT_ID"/>
+    AliasName="PRIMARY_CONTACT_ID"
+    LOVName="LOV_PrimaryContactId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SalesStage"
     PrecisionRule="true"
@@ -127,12 +162,46 @@
     AliasName="DESCRIPTION"/>
   <ViewAttribute
     Name="OpportunityName"
-    IsUpdateable="false"
-    IsSelected="false"
     PrecisionRule="true"
     AliasName="OPPORTUNITY_NAME"
     EntityAttrName="OpportunityName"
     EntityUsage="OpportunityEO"/>
+  <ViewCriteria
+    Name="OpportunityVOCriteria"
+    ViewObjectName="sfa.model.uiview.OpportunityVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="OpportunityVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="OpportunityVOCriteria_OpportunityVOCriteria_row_0_OpportunityName"
+        ViewAttribute="OpportunityName"
+        Operator="STARTSWITH"
+        Conjunction="AND"
+        Value=":opportNameVar"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="Interaction"
     ViewLink="sfa.model.uiview.SysC007420Link"
