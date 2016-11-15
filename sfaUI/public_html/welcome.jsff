@@ -5,7 +5,8 @@
         <af:gridRow height="50px" id="gr2">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                 <!-- Header -->
-                <h:outputText value="Welcome #{securityContext.userName}" id="ot1" style="font-size:xx-large; color:Blue; font-weight:bolder;"/>
+                <h:outputText value="Welcome #{securityContext.userName}" id="ot1" style="font-size:xx-large; color:Blue; font-weight:bolder;"
+                              />
             </af:gridCell>
         </af:gridRow>
         <af:gridRow height="100%" id="gr1">

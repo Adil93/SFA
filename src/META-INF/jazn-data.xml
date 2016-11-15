@@ -11,6 +11,16 @@
                     <display-name>Admin</display-name>
                     <description>Admin privilaged user</description>
                 </user>
+                <user>
+                    <name>sales</name>
+                    <credentials>{903}rHk9Mck/4SFNThQ7ABP1K4P98EAFy7djNeW+7TvZQnA=</credentials>
+                    <display-name>Tester</display-name>
+                </user>
+                <user>
+                    <name>manager</name>
+                    <display-name>Manager</display-name>
+                    <credentials>{903}FE3bBpAH1CMiFnRQ1U/Ooso/BZcRBoGO</credentials>
+                </user>
             </users>
         </realm>
     </jazn-realm>
@@ -39,6 +49,27 @@
                             <member>
                                 <class>oracle.security.jps.internal.core.principals.JpsAnonymousRoleImpl</class>
                                 <name>anonymous-role</name>
+                            </member>
+                        </members>
+                    </app-role>
+                    <app-role>
+                        <name>SalesRep-role</name>
+                        <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                        <members>
+                            <member>
+                                <class>oracle.security.jps.internal.core.principals.JpsXmlUserImpl</class>
+                                <name>sales</name>
+                            </member>
+                        </members>
+                    </app-role>
+                    <app-role>
+                        <name>SalesManager-role</name>
+                        <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                        <display-name>Sales Manager</display-name>
+                        <members>
+                            <member>
+                                <class>oracle.security.jps.internal.core.principals.JpsXmlUserImpl</class>
+                                <name>manager</name>
                             </member>
                         </members>
                     </app-role>
@@ -116,6 +147,80 @@
                             <permission>
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
                                 <name>/WEB-INF/ProductFlow.xml#ProductFlow</name>
+                                <actions>view</actions>
+                            </permission>
+                        </permissions>
+                    </grant>
+                    <grant>
+                        <grantee>
+                            <principals>
+                                <principal>
+                                    <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                                    <name>SalesManager-role</name>
+                                </principal>
+                            </principals>
+                        </grantee>
+                        <permissions>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/AccountFlow.xml#AccountFlow</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/ContactFlow.xml#ContactFlow</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/ProductFlow.xml#ProductFlow</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/WelcomePageFlow.xml#WelcomePageFlow</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>sfa.view.pageDefs.HomePageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                        </permissions>
+                    </grant>
+                    <grant>
+                        <grantee>
+                            <principals>
+                                <principal>
+                                    <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                                    <name>SalesRep-role</name>
+                                </principal>
+                            </principals>
+                        </grantee>
+                        <permissions>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/AccountFlow.xml#AccountFlow</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/ContactFlow.xml#ContactFlow</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/ProductFlow.xml#ProductFlow</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/WelcomePageFlow.xml#WelcomePageFlow</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>sfa.view.pageDefs.HomePageDef</name>
                                 <actions>view</actions>
                             </permission>
                         </permissions>
