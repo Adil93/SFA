@@ -1,0 +1,12 @@
+//Groovy Scripts for sfa.model.uiview.AppointmentVO
+
+package sfa.model.uiview
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="Tz")
+def Tz_ExpressionScript_Expression()
+{
+TimeZone.getDefault().getID()
+}
+

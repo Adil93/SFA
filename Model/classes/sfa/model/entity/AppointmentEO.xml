@@ -155,6 +155,10 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="AppointmentEORow"/>
   </Attribute>
   <AccessorAttribute
     Name="AppointmentInviteeRelation"

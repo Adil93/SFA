@@ -102,6 +102,17 @@
     EntityAttrName="Description"
     EntityUsage="AppointmentEO"
     AliasName="DESCRIPTION"/>
+  <ViewAttribute
+    Name="Tz"
+    PrecisionRule="true"
+    AliasName="TZ"
+    EntityAttrName="Tz"
+    EntityUsage="AppointmentEO">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="AppointmentVORow"/>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="AppointmentInviteeRelation"
     ViewLink="sfa.model.uiview.SysC007412Link"

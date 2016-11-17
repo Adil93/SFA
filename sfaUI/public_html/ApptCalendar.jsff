@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow height="50px" id="gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                <!-- Header -->
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow height="100%" id="gr2">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                <!-- Content -->
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</jsp:root>
