@@ -81,5 +81,6 @@
             Action="setCurrentRowWithKeyValue">
       <NamedData NDName="rowKey" NDType="java.lang.String" NDValue="#{row.AccountId}"/>
     </action>
+    <action id="Commit" DataControl="AppModuleAMDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
   </bindings>
 </pageDefinition>

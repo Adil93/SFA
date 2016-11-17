@@ -20,7 +20,19 @@
              <af:toolbar id="t2">
             <af:button icon="#{resource['images:Create.png']}" id="b1" action="productCreate" shortDesc="create"/>
             <af:button id="b2" action="productEdit" icon="#{resource['images:EditDocument.png']}" shortDesc="edit"/>
-             <af:button id="b3" icon="#{resource['images:remove.png']}" action="delete" immediate="true" shortDesc="delete"/>
+             <af:button id="b3" icon="#{resource['images:remove.png']}"
+                        action="#{backingBeanScope.DeleteProductBean.b3_action}" immediate="true" shortDesc="delete">
+              <af:showPopupBehavior popupId="popconfirm" triggerType="action"/>
+            </af:button>
+                       
+            <af:popup childCreation="deferred" autoCancel="disabled" id="popconfirm" contentDelivery="lazyUncached">
+                <af:dialog id="d1" type="okCancel"
+                           dialogListener="#{backingBeanScope.DeleteProductBean.onDialogAction}">
+                    <f:facet name="buttonBar"/>
+                    <af:outputText value="Do you want to delete this row" id="ot1"/>
+                </af:dialog>
+            </af:popup>       
+                       
         </af:toolbar>
         </f:facet>
         <f:facet name="statusbar"/>
@@ -32,7 +44,7 @@
           <af:column sortProperty="#{bindings.Product1.hints.ProductCode.name}" sortable="true"
                      headerText="#{bindings.Product1.hints.ProductCode.label}" id="c1">
             <af:outputText value="#{row.ProductCode}" shortDesc="#{bindings.Product1.hints.ProductCode.tooltip}"
-                           id="ot1"/>
+                           id="ot2"/>
           </af:column>
           <af:column sortProperty="#{bindings.Product1.hints.ProductName.name}" sortable="true"
                      headerText="#{bindings.Product1.hints.ProductName.label}" id="c2">
@@ -59,4 +71,5 @@
       </af:panelCollection>
     </f:facet>
   </af:panelSplitter>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:DeleteProductBean-->
 </jsp:root>

@@ -5,6 +5,11 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <managed-bean id="__13">
+      <managed-bean-name>DeleteProductBean</managed-bean-name>
+      <managed-bean-class>sfa.view.DeleteProductHelper</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
     <view id="ProductSearch">
       <page>/ProductSearch.jsff</page>
     </view>
