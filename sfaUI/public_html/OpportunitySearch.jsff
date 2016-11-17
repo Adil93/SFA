@@ -20,7 +20,17 @@
              <af:toolbar id="t2">
             <af:button icon="#{resource['images:Create.png']}" id="b1" action="opportunityCreate" shortDesc="create"/>
             <af:button id="b2" action="opportunityEdit" icon="#{resource['images:EditDocument.png']}" shortDesc="edit"/>
-             <af:button id="b3" icon="#{resource['images:remove.png']}" action="delete" immediate="true" shortDesc="delete"/>
+             <af:button id="b3" icon="#{resource['images:remove.png']}"
+                        action="#{backingBeanScope.DeleteOpporHelperBean.b3_action}" immediate="true" shortDesc="delete">
+              <af:showPopupBehavior popupId="popconfirm" triggerType="action"/>
+            </af:button>
+              <af:popup childCreation="deferred" autoCancel="disabled" id="popconfirm" contentDelivery="lazyUncached">
+                <af:dialog id="d1" type="okCancel"
+                           dialogListener="#{backingBeanScope.DeleteOpporHelperBean.onDialogAction}">
+                    <f:facet name="buttonBar"/>
+                    <af:outputText value="Do you want to delete this row" id="ot1"/>
+                </af:dialog>
+            </af:popup>             
         </af:toolbar>
         </f:facet>
         <f:facet name="statusbar"/>
@@ -32,7 +42,7 @@
           <af:column sortProperty="#{bindings.Opportunity1.hints.OpportunityName.name}" sortable="true"
                      headerText="#{bindings.Opportunity1.hints.OpportunityName.label}" id="c1">
             <af:link actionListener="#{bindings.setCurrentRowWithKeyValue.execute}" text="#{row.OpportunityName}"
-                     disabled="#{!bindings.setCurrentRowWithKeyValue.enabled}" id="l1"/>
+                     disabled="#{!bindings.setCurrentRowWithKeyValue.enabled}" id="l1" action="opportunityDetails"/>
           </af:column>
           <af:column sortProperty="#{bindings.Opportunity1.hints.CloseDate.name}" sortable="true"
                      headerText="#{bindings.Opportunity1.hints.CloseDate.label}" id="c2">
@@ -122,4 +132,5 @@
       </af:panelCollection>
     </f:facet>
   </af:panelSplitter>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:DeleteOpporHelperBean-->
 </jsp:root>

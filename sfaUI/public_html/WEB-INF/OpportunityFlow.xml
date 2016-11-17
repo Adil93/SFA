@@ -5,6 +5,11 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <managed-bean id="__26">
+      <managed-bean-name>DeleteOpporHelperBean</managed-bean-name>
+      <managed-bean-class>sfa.view.DeleteOpporHelper</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
     <view id="OpportunitySearch">
       <page>/OpportunitySearch.jsff</page>
     </view>

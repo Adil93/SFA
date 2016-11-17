@@ -33,5 +33,8 @@
             Action="setCurrentRowWithKeyValue">
       <NamedData NDName="rowKey" NDType="java.lang.String" NDValue="#{row.OpportunityId}"/>
     </action>
+    <action IterBinding="Opportunity1Iterator" id="Delete" InstanceName="AppModuleAMDataControl.Opportunity1"
+            DataControl="AppModuleAMDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" DataControl="AppModuleAMDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
   </bindings>
 </pageDefinition>
