@@ -18,11 +18,21 @@
         <f:facet name="menus"/>
         <f:facet name="toolbar">
             <af:toolbar id="t2">
-            <af:button actionListener="#{bindings.CreateInsert.execute}" icon="#{resource['images:Create.png']}"
-                       disabled="#{!bindings.CreateInsert.enabled}" id="b1" action="contactCreate" shortDesc="create"/>
-            <af:button id="b2" action="contactCreate" icon="#{resource['images:EditDocument.png']}" shortDesc="edit"/>
-            <af:button actionListener="#{bindings.Delete.execute}" disabled="#{!bindings.Delete.enabled}"
-                       id="b3" icon="#{resource['images:remove.png']}" action="delete" immediate="true" shortDesc="delete"/>
+                <af:button actionListener="#{bindings.CreateInsert.execute}" icon="#{resource['images:Create.png']}"
+                           disabled="#{!bindings.CreateInsert.enabled}" id="b1" action="contactCreate" shortDesc="create"/>
+                <af:button id="b2" action="contactCreate" icon="#{resource['images:EditDocument.png']}" shortDesc="edit"/>
+                <af:button disabled="#{!bindings.Delete.enabled}"
+                           id="b3" icon="#{resource['images:remove.png']}"
+                           action="#{backingBeanScope.deleteHelperBean.b1_action}" shortDesc="delete">
+                  <af:showPopupBehavior popupId="popconfirm" triggerType="action" />
+                </af:button>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="popconfirm" contentDelivery="lazyUncached">
+                    <af:dialog id="d1" type="okCancel"
+                               dialogListener="#{backingBeanScope.deleteHelperBean.onDialogAction}">
+                        <f:facet name="buttonBar"/>
+                        <af:outputText value="Do you want to delete this row?" id="ot1"/>
+                    </af:dialog>
+                </af:popup>
           </af:toolbar>
         </f:facet>
         <f:facet name="statusbar"/>
@@ -35,7 +45,7 @@
                   columnStretching="last">
           <af:column sortProperty="#{bindings.CustomerContact11.hints.Title.name}" sortable="true"
                      headerText="#{bindings.CustomerContact11.hints.Title.label}" id="c1" width="56">
-            <af:outputText value="#{row.Title}" shortDesc="#{bindings.CustomerContact11.hints.Title.tooltip}" id="ot1"/>
+            <af:outputText value="#{row.Title}" shortDesc="#{bindings.CustomerContact11.hints.Title.tooltip}" id="ot2"/>
           </af:column>
           <af:column sortProperty="#{bindings.CustomerContact11.hints.LastName.name}" sortable="true"
                      headerText="#{bindings.CustomerContact11.hints.LastName.label}" id="c2" width="144">

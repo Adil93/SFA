@@ -12,6 +12,7 @@ public class DynamicRegion implements Serializable {
     private String accountTaskFlowID = "/WEB-INF/AccountFlow.xml#AccountFlow";
     private String productTaskFlowId = "/WEB-INF/ProductFlow.xml#ProductFlow";
     private String opportuTaskFlowId = "/WEB-INF/OpportunityFlow.xml#OpportunityFlow";
+    private String apptCalenderTaskFlowId = "/WEB-INF/CalenderFlow.xml#CalenderFlow";
     private String currentTF = "welcome";
 
     public DynamicRegion() {
@@ -19,7 +20,7 @@ public class DynamicRegion implements Serializable {
 
     public TaskFlowId getDynamicTaskFlowId() {
         if(this.currentTF.equalsIgnoreCase("welcome")) {
-            return TaskFlowId.parse(welcomeTaskFlowId);
+            return TaskFlowId.parse(apptCalenderTaskFlowId);
         } else if(this.currentTF.equalsIgnoreCase("contact")) {
             return TaskFlowId.parse(contactTaskFlowId);
         } else if(this.currentTF.equalsIgnoreCase("account")) {

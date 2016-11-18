@@ -1,0 +1,12 @@
+//Groovy Scripts for sfa.model.uiview.AppointmentVO
+
+package sfa.model.uiview
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="timeZone")
+def timeZone_VariableScript_Variable()
+{
+TimeZone.getDefault().getID()
+}
+

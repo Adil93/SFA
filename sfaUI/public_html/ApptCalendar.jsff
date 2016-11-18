@@ -3,12 +3,13 @@
     <af:panelGridLayout id="pgl1">
         <af:gridRow height="50px" id="gr1">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
-                <!-- Header -->
+                <af:outputText value="Welcome #{securityContext.userName}" id="ot1" />
             </af:gridCell>
         </af:gridRow>
         <af:gridRow height="100%" id="gr2">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
                 <!-- Content -->
+                <af:calendar value="#{bindings.Appointment1.calendarModel}" id="c1"/>
             </af:gridCell>
         </af:gridRow>
     </af:panelGridLayout>

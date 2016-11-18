@@ -13,6 +13,23 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="timeZone"
+    Kind="where"
+    Type="java.lang.String">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="untrusted"
+      CodeSourceName="AppointmentVO"/>
+  </Variable>
+  <Variable
+    Name="startDateTime"
+    Kind="where"
+    Type="java.sql.Timestamp"/>
+  <Variable
+    Name="endDateTime"
+    Kind="where"
+    Type="java.sql.Timestamp"/>
   <EntityUsage
     Name="AppointmentEO"
     Entity="sfa.model.entity.AppointmentEO"/>
@@ -118,4 +135,44 @@
     ViewLink="sfa.model.uiview.SysC007412Link"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <DeclarativeWhereClause
+    Name="DeclarativeWhereClause">
+    <ViewCriteria
+      Name="AppointmentVOWhereCriteria"
+      ViewObjectName="sfa.model.uiview.AppointmentVO"
+      Conjunction="AND"
+      Mode="3">
+      <ViewCriteriaRow
+        Name="AppointmentVOWhereCriteria_row_0"
+        UpperColumns="1">
+        <ViewCriteriaItem
+          Name="StartTime"
+          ViewAttribute="StartTime"
+          Operator="AFTER"
+          Conjunction="AND"
+          Value=":startDateTime"
+          GenerateIsNullClauseForBindVars="false"
+          IsBindVarValue="true"
+          Required="Optional"/>
+        <ViewCriteriaItem
+          Name="EndTime"
+          ViewAttribute="EndTime"
+          Operator="BEFORE"
+          Conjunction="AND"
+          Value=":endDateTime"
+          GenerateIsNullClauseForBindVars="false"
+          IsBindVarValue="true"
+          Required="Optional"/>
+        <ViewCriteriaItem
+          Name="Tz"
+          ViewAttribute="Tz"
+          Operator="="
+          Conjunction="AND"
+          Value=":timeZone"
+          GenerateIsNullClauseForBindVars="false"
+          IsBindVarValue="true"
+          Required="Optional"/>
+      </ViewCriteriaRow>
+    </ViewCriteria>
+  </DeclarativeWhereClause>
 </ViewObject>

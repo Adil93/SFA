@@ -13,11 +13,11 @@
   <Attribute
     Name="AppointmentId"
     IsNotNull="true"
-    Precision="20"
+    Precision="5"
     Scale="0"
     ColumnName="APPOINTMENT_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigInteger"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="APPOINTMENT"
     PrimaryKey="true">
@@ -41,11 +41,10 @@
   <Attribute
     Name="AppointmentType"
     Precision="20"
-    Scale="0"
     ColumnName="APPOINTMENT_TYPE"
-    SQLType="NUMERIC"
-    Type="java.math.BigInteger"
-    ColumnType="NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
     TableName="APPOINTMENT"/>
   <Attribute
     Name="StartTime"
@@ -84,21 +83,20 @@
     TableName="APPOINTMENT"/>
   <Attribute
     Name="ParentId"
-    Precision="20"
+    Precision="5"
     Scale="0"
     ColumnName="PARENT_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigInteger"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="APPOINTMENT"/>
   <Attribute
     Name="ParentType"
-    Precision="30"
-    Scale="0"
+    Precision="20"
     ColumnName="PARENT_TYPE"
-    SQLType="NUMERIC"
-    Type="java.math.BigInteger"
-    ColumnType="NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
     TableName="APPOINTMENT"/>
   <Attribute
     Name="CreationDate"
@@ -146,19 +144,16 @@
   </Attribute>
   <Attribute
     Name="Tz"
-    Precision="50"
+    Precision="100"
     ColumnName="TZ"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="APPOINTMENT">
+    TableName="APPOINTMENT"
+    IsNotNull="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
-    <TransientExpression
-      Name="ExpressionScript"
-      trustMode="untrusted"
-      CodeSourceName="AppointmentEORow"/>
   </Attribute>
   <AccessorAttribute
     Name="AppointmentInviteeRelation"
@@ -188,6 +183,18 @@
     AssociationOtherEnd="sfa.model.entity.FkAppointmentCreatedbyAssoc.Appointment1"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <Key
+    Name="AppointmentTzCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"TZ" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="APPOINTMENT_TZ_CHECK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sfa.model.entity.AppointmentEO.Tz"/>
+    </AttrArray>
+  </Key>
   <Key
     Name="SysC007409"
     PrimaryKey="true">

@@ -115,6 +115,11 @@
                                 <name>/WEB-INF/OpportunityFlow.xml#OpportunityFlow</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/CalenderFlow.xml#CalenderFlow</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -142,6 +147,11 @@
                                 <name>/WEB-INF/OpportunityFlow.xml#OpportunityFlow</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/CalenderFlow.xml#CalenderFlow</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -162,6 +172,11 @@
                             <permission>
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
                                 <name>/WEB-INF/OpportunityFlow.xml#OpportunityFlow</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/CalenderFlow.xml#CalenderFlow</name>
                                 <actions>view</actions>
                             </permission>
                         </permissions>
@@ -206,6 +221,11 @@
                                 <name>/WEB-INF/OpportunityFlow.xml#OpportunityFlow</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/CalenderFlow.xml#CalenderFlow</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -248,6 +268,11 @@
                                 <name>/WEB-INF/OpportunityFlow.xml#OpportunityFlow</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/CalenderFlow.xml#CalenderFlow</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -263,6 +288,11 @@
                             <permission>
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
                                 <name>/WEB-INF/OpportunityFlow.xml#OpportunityFlow</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/CalenderFlow.xml#CalenderFlow</name>
                                 <actions>view</actions>
                             </permission>
                         </permissions>

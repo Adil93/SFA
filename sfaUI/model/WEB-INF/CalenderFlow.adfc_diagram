@@ -2,4 +2,23 @@
 <SDM>
    <OverallProperties
       id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">ApptCalendar</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">188.7793</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ApptCalendar&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">160.39648</property>
+      <property
+         name="page">/ApptCalendar.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
 </SDM>

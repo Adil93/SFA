@@ -51,7 +51,7 @@
       <property
          name="fromOutcome">contactCreate</property>
       <property
-         name="sdm:polyPoints">R50,101.06925,64.10156,491.29498,63.039062,L50</property>
+         name="sdm:polyPoints">R50,101.06925,63.817383,491.29498,62.754883,L50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall11">
@@ -87,7 +87,7 @@
       <property
          name="fromOutcome">cancel</property>
       <property
-         name="sdm:polyPoints">L58,492.46094,70.03906,338.5,184.83594,R50</property>
+         name="sdm:polyPoints">L58,492.46094,69.75488,338.5,184.55176,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -97,7 +97,7 @@
       <property
          name="fromOutcome">*</property>
       <property
-         name="sdm:polyPoints">L50,256.5,184.83594,99.84668,71.10156,R58</property>
+         name="sdm:polyPoints">L50,256.5,184.55176,99.84668,70.81738,R58</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -130,7 +130,7 @@
       <property
          name="fromOutcome">submitContinue</property>
       <property
-         name="sdm:polyPoints">R46,574.52203,59.539062,757.5,62.734375,L46</property>
+         name="sdm:polyPoints">R46,574.52203,59.254883,757.5,62.450195,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -140,7 +140,7 @@
       <property
          name="fromOutcome">*</property>
       <property
-         name="sdm:polyPoints">L54,757.4389,69.734375,574.46094,66.53906,R54</property>
+         name="sdm:polyPoints">L54,757.4389,69.450195,574.46094,66.25488,R54</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall21">
@@ -163,7 +163,7 @@
       <property
          name="fromOutcome">*</property>
       <property
-         name="sdm:polyPoints">L46,256.5,-73.92969,99.5,-78.296875,R50</property>
+         name="sdm:polyPoints">L46,256.5,-74.21387,99.5,-78.581055,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -173,7 +173,7 @@
       <property
          name="fromOutcome">*</property>
       <property
-         name="sdm:polyPoints">B50,58.5,-24.296875,58.84668,10.1015625,T50</property>
+         name="sdm:polyPoints">B50,58.5,-24.581055,58.84668,9.817383,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
